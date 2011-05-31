@@ -1,0 +1,1 @@
+v0.3 Formatado campo taxa_desconto, que estava sendo retornado como obtido do arquivo, sem o separador de casas decimais
