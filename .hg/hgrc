@@ -1,7 +1,0 @@
-[paths]
-default = https://retorno-boletophp.googlecode.com/hg/
-
-
-[ui]
-username = Manoel Campos <manoelcampos@gmail.com>
-ignore = ~/.hgignore

@@ -1,1 +1,0 @@
-Adicionado suporte para CNAB400 com convênios de 7 dígitos e alterada assinatura do evento aoProcessarLinha, adicionando o parâmetro  (objeto da classe RetornoBase que define o formato do arquivo processado)
