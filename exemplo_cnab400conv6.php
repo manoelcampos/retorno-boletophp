@@ -11,8 +11,7 @@
 //de RetornoBase, e assim, executa o processamento do arquivo de uma determinada
 //carteira de um banco específico.
 require_once("RetornoBanco.php");
-//Adiciona a classe para leitura de arquivos de retorno para o formato Febraban/CNAB400
-require_once("RetornoCNAB400Conv6.php");
+require_once("RetornoFactory.php");
 
 /**Função handler a ser associada ao evento aoProcessarLinha de um objeto da classe
 * RetornoBase. A função será chamada cada vez que o evento for disparado.
@@ -26,10 +25,10 @@ require_once("RetornoCNAB400Conv6.php");
 */
 function linhaProcessada($self, $numLn, $vlinha) {
   if($vlinha) {
-	  if($vlinha["id_registro"] == $self::DETALHE) {
+	  if($vlinha["registro"] == $self::DETALHE) {
       printf("%08d: ", $numLn);
       echo "Nosso N&uacute;mero <b>".$vlinha['nosso_numero']."</b> ".
-           "Data <b>".$vlinha["data_ent_liq"]."</b> ". 
+           "Data <b>".$vlinha["data_ocorrencia"]."</b> ". 
            "Valor <b>".$vlinha["valor"]."</b><br/>\n";
     }
   } else echo "Tipo da linha n&atilde;o identificado<br/>\n";
@@ -53,8 +52,12 @@ function linhaProcessada1($self, $numLn, $vlinha) {
 
 //--------------------------------------INÍCIO DA EXECUÇÃO DO CÓDIGO-----------------------------------------------------
 
-//$cnab400 = new RetornoCNAB400Conv6("retorno_cnab400conv6.ret", "linhaProcessada1");
-$cnab400 = new RetornoCNAB400Conv6("retorno_cnab400conv6.ret", "linhaProcessada");
+$fileName = "retorno_cnab400conv6.ret";
+
+//Use uma das duas instrucões abaixo (comente uma e descomente a outra)
+//$cnab400 = RetornoFactory::getRetorno($fileName, "linhaProcessada1");
+$cnab400 = RetornoFactory::getRetorno($fileName, "linhaProcessada");
+
 $retorno = new RetornoBanco($cnab400);
 $retorno->processar();
 

@@ -29,7 +29,7 @@ abstract class RetornoCNAB400Base extends RetornoBase {
   protected function processarHeaderArquivo($linha) {
     $vlinha = array();	
 																													    //X = ALFANUMÉRICO 9 = NUMÉRICO V = VÍRGULA DECIMAL ASSUMIDA
-		$vlinha["id_registro"]        = substr($linha, 1,     1); //9 Identificação do Registro Header: “0”
+		$vlinha["registro"]        = substr($linha, 1,     1); //9 Identificação do Registro Header: “0”
 		$vlinha["tipo_operacao"]      = substr($linha, 2,     1); //9 Tipo de Operação: “2”
 		$vlinha["id_tipo_operacao"]   = substr($linha, 3,     7); //X Identificação Tipo de Operação “RETORNO”
 		$vlinha["id_tipo_servico"]    = substr($linha, 10,    2); //9 Identificação do Tipo de Serviço: “01”
@@ -41,7 +41,7 @@ abstract class RetornoCNAB400Base extends RetornoBase {
 		$vlinha["dv_conta _cedente"]  = substr($linha, 40,    1); //X Dígito Verificador - D.V. - da Conta Corrente do Cedente
 
 		$vlinha["nome_cedente"]       = substr($linha, 47,   30); //X Nome do Cedente
-		$vlinha["cod_nome_banco"]     = substr($linha, 77,   18); //X 001BANCODOBRASIL
+		$vlinha["banco"]     = substr($linha, 77,   18); //X 001BANCODOBRASIL
 		$vlinha["data_gravacao"]      = $this->formataData(substr($linha, 95,    6)); //9 Data da Gravação: Informe no formado “DDMMAA”
 		$vlinha["sequencial_reg"]     = substr($linha, 395,   6); //9 Seqüencial do Registro: ”000001”
 	  return $vlinha;
@@ -53,7 +53,7 @@ abstract class RetornoCNAB400Base extends RetornoBase {
 	protected function processarDetalhe($linha) {
 		$vlinha = array();
 		                                                           //X = ALFANUMÉRICO 9 = NUMÉRICO V = VÍRGULA DECIMAL ASSUMIDA
-		$vlinha["id_registro"]         = substr($linha,   1,   1); //9  Id do Registro Detalhe: 1 p/ convênios de 6 dígitos e 7 para convênios de 7 dígitos
+		$vlinha["registro"]         = substr($linha,   1,   1); //9  Id do Registro Detalhe: 1 p/ convênios de 6 dígitos e 7 para convênios de 7 dígitos
 		//$vlinha["zeros1"]              = substr($linha,   2,   2); //9  Zeros
 		//$vlinha["zeros2"]              = substr($linha,   4,  14); //9  Zeros
 		$vlinha["agencia"]             = substr($linha,  18,   4); //9  Prefixo da Agência
@@ -65,7 +65,7 @@ abstract class RetornoCNAB400Base extends RetornoBase {
 		//$vlinha["branco"]              = substr($linha, 106,   1); //x  Branco
 		$vlinha["carteira"]            = substr($linha, 107,   2); //9  Carteira
 		$vlinha["comando"]             = substr($linha, 109,   2); //9  Comando - nota 07
-		$vlinha["data_ent_liq"]=$this->formataData(substr($linha, 111,   6)); //X  Data da Entrada/Liquidação (DDMMAA)
+		$vlinha["data_ocorrencia"]=$this->formataData(substr($linha, 111,   6)); //X  Data da Entrada/Liquidação (DDMMAA)
 		$vlinha["num_titulo"]          = substr($linha, 117,  10); //X  Número título dado pelo cedente - (ver nota 06 para convênio de 6 dígitos)
 		$vlinha["data_vencimento"]     = substr($linha, 147,   6); //9  Data de vencimento (DDMMAA) (ver nota 6 para convênios de 7 dígitos)
 		$vlinha["valor"]=$this->formataNumero(substr($linha, 153,  13)); //9  v99 Valor do título
@@ -104,7 +104,7 @@ abstract class RetornoCNAB400Base extends RetornoBase {
 	protected function processarTrailerArquivo($linha) {
 		$vlinha = array();
 																																	 //X = ALFANUMÉRICO 9 = NUMÉRICO V = VÍRGULA DECIMAL ASSUMIDA
-		$vlinha["id_registro"]             = substr($linha,   1,   1); //9  Identificação do Registro Trailer: “9”
+		$vlinha["registro"]             = substr($linha,   1,   1); //9  Identificação do Registro Trailer: “9”
 		$vlinha["2"]                       = substr($linha,   2,   1); //9  “2”
 		$vlinha["01"]                      = substr($linha,   3,   2); //9  “01”
 		$vlinha["001"]                     = substr($linha,   5,   3); //9  “001”

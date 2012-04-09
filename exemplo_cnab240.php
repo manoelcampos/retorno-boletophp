@@ -13,8 +13,7 @@
 //de RetornoBase, e assim, executa o processamento do arquivo de uma determinada
 //carteira de um banco específico.
 require_once("RetornoBanco.php");
-//Adiciona a classe para leitura de arquivos de retorno para o formato Febraban/CNAB240
-require_once("RetornoCNAB240.php");
+require_once("RetornoFactory.php");
 
 
 /**Função handler a ser associada ao evento aoProcessarLinha de um objeto da classe
@@ -36,18 +35,17 @@ function linhaProcessada($self, $numLn, $vlinha) {
   if($vlinha) {
 	  if($vlinha["registro"] == $self::HEADER_ARQUIVO)
 		  echo "<b>".$vlinha['nome_empresa']."</b><br />";
-	  if($vlinha["ID"] == $self::DETALHE_T) {
-		  echo "<p>Nosso N&uacute;mero: <b>".$vlinha['nosso_numero']."</b> - 
-		  Vencimento: <b>".$vlinha['vencimento']."</b><br />
-		  Valor do Titulo: <b>R\$ ".number_format($vlinha['valor_titulo'], 2, ',', '')."</b> - 
-		  Valor da Tarifa: <b>R\$ ".number_format($vlinha['valor_tarifa'], 2, ',', '')."</b><br />";
+		//O registro detalhe U são dados adicionais do registro de pagamento
+		//e não necessariamente precisa ser usado.
+		//Pode ser que o arquivo de retorno não tenha o registro detalhe separado em 
+		//duas linhas (T e U). Assim, nestes casos, pode-se fazer apenas um 
+		//if($vlinha["registro"] == $self::DETALHE)
+	  else if($vlinha["registro"] == $self::DETALHE && $vlinha["segmento"] == "T") {
+		  echo "Nosso N&uacute;mero: <b>".$vlinha['nosso_numero']."</b> - 
+		  Venc: <b>".$vlinha['vencimento']."</b>".
+		  " Vlr Titulo: <b>R\$ ".number_format($vlinha['valor'], 2, ',', '')."</b> - ".
+		  " Vlr Tarifa: <b>R\$ ".number_format($vlinha['valor_tarifa'], 2, ',', '')."</b><br/>";
 	  }
-	  if($vlinha["ID"] == $self::DETALHE_U) {
-		  echo "Valor Pago: <b>R\$ ".number_format($vlinha['valor_pago'], 2, ',', '')."</b> - 
-		  Valor recebido: <b>R\$ ".number_format($vlinha['valor_liquido'], 2, ',', '')."</b><br />
-		  Data do pagamento: <b>".$vlinha['data_ocorrencia']."</b> - 
-		  Data do credito: <b>".$vlinha['data_credito']."</b>";
-    }
   } else echo "Tipo da linha n&atilde;o identificado<br/>\n";
 }
 
@@ -70,8 +68,12 @@ function linhaProcessada1($self, $numLn, $vlinha) {
 
 //--------------------------------------INÍCIO DA EXECUÇÃO DO CÓDIGO-----------------------------------------------------
 
-//$cnab240 = new RetornoCNAB400("retorno_cnab240.ret", "linhaProcessada");
-$cnab240 = new RetornoCNAB240("retorno_cnab240.ret", "linhaProcessada1");
+$fileName = "retorno_cnab240.ret";
+
+//Use uma das duas instrucões abaixo (comente uma e descomente a outra)
+$cnab240 = RetornoFactory::getRetorno($fileName, "linhaProcessada");
+//$cnab240 = RetornoFactory::getRetorno($fileName, "linhaProcessada1");
+
 $retorno = new RetornoBanco($cnab240);
 $retorno->processar();
 ?>

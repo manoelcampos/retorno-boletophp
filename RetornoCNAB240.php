@@ -16,8 +16,9 @@ class RetornoCNAB240 extends RetornoBase {
   /**@property int HEADER_LOTE Define o valor que identifica uma coluna do tipo HEADER DE LOTE*/
 	const HEADER_LOTE = 1;
   /**@property int DETALHE Define o valor que identifica uma coluna do tipo DETALHE*/
-	const DETALHE_T = "3T";
-	const DETALHE_U = "3U";
+	const DETALHE = 3;
+	const DETALHE_T = "T";
+	const DETALHE_U = "U";
   /**@property int TRAILER_LOTE Define o valor que identifica uma coluna do tipo TRAILER DEs LOTE*/
 	const TRAILER_LOTE = 5;
   /**@property int TRAILER_ARQUIVO Define o valor que identifica uma coluna do tipo TRAILER DE ARQUIVO*/
@@ -35,7 +36,7 @@ class RetornoCNAB240 extends RetornoBase {
 		$vlinha["cnab1"]					= substr($linha,  9,   9); //BRANCOS //Uso Exclusivo FEBRABAN / CNAB
 		$vlinha["tipo_inscricao_empresa"]	= substr($linha, 18,   1); //num - 1-CPF, 2-CGC //Tipo de Inscrição da Empresa
 		$vlinha["num_inscricao_empresa"]  	= substr($linha, 19,  14); //numerico  //Número de Inscrição da Empresa
-		$vlinha["cod_convenio"]				= substr($linha, 33,  20); //alfanumerico  //Código do Convênio no Banco
+		$vlinha["convenio"]				= substr($linha, 33,  20); //alfanumerico  //Código do Convênio no Banco
 		$vlinha["agencia"]					= substr($linha, 53,   5); //numerico //Agência Mantenedora da Conta
 		$vlinha["dv_agencia"]				= substr($linha, 58,   1); //alfanumerico //DV da Agência
 		$vlinha["conta_corrente"]			= substr($linha, 59,  12); //numerico //Número da Conta Corrente
@@ -86,11 +87,10 @@ class RetornoCNAB240 extends RetornoBase {
 
 	protected function processarDetalheT($linha) {
 		  $vlinha = array();
-			$vlinha["ID"] 					= static::DETALHE_T; // ID para identicicar a linha
 			$vlinha["banco"] 				= substr($linha,   1,  3); //Código do Banco na Compensação
 			$vlinha["lote"] 				= substr($linha,   4,  4); //Lote de Serviço
 			$vlinha["registro"] 			= substr($linha,   8,  1); //Tipo de Registro
-			$vlinha["n_registro"] 			= substr($linha,   9,  5); //Número Sequencial Registro no Lote
+			$vlinha["sequencial"] 			= substr($linha,   9,  5); //Número Sequencial Registro no Lote
 			$vlinha["segmento"] 			= substr($linha,  14,  1); //Código Segmento do Registro Detalhe
 			$vlinha["servico_CNAB"] 		= substr($linha,  15,  1); //Uso Exclusivo FEBRABAN/CNAB
 			$vlinha["cod_mov"] 				= substr($linha,  16,  2); //Código de Movimento Retorno
@@ -103,7 +103,7 @@ class RetornoCNAB240 extends RetornoBase {
 			$vlinha["carteira"] 			= substr($linha,  58,  1); //Código da Carteira
 			$vlinha["n_documento"] 			= substr($linha,  59, 15); //Número do Documento de Cobrança
 			$vlinha["vencimento"] 			= $this->formataData(substr($linha,  74,  8)); //Data do Vencimento do Título
-			$vlinha["valor_titulo"] 		= $this->formataNumero(substr($linha,  82, 15)); //Valor Nominal do Título
+			$vlinha["valor"] 		= $this->formataNumero(substr($linha,  82, 15)); //Valor Nominal do Título
 			$vlinha["banco_receb"] 			= substr($linha,  97,  3); //Número do Banco
 			$vlinha["ag_receb"] 			= substr($linha, 100,  5); //Agência Cobradora/Recebedora
 			$vlinha["dv_receb"] 			= substr($linha, 105,  1); //Dígito Verificador da Agência
@@ -122,11 +122,10 @@ class RetornoCNAB240 extends RetornoBase {
 
 	protected function processarDetalheU($linha) {
 	  	$vlinha = array();
-			$vlinha["ID"]					 = static::DETALHE_T; // ID para identificar a linha
 			$vlinha["banco"] 				= substr($linha,   1,  3); //Código do Banco na Compensação
 			$vlinha["lote"] 				= substr($linha,   4,  4); //Lote de Serviço
 			$vlinha["registro"] 			= substr($linha,   8,  1); //Tipo de Registro
-			$vlinha["n_registro"] 			= substr($linha,   9,  5); //Nº Sequencial do Registro no Lote
+			$vlinha["sequencial"] 			= substr($linha,   9,  5); //Nº Sequencial do Registro no Lote
 			$vlinha["segmento"] 			= substr($linha,  14,  1); //Cód. Segmento do Registro Detalhe
 			$vlinha["servico_CNAB"] 		= substr($linha,  15,  1); //Uso Exclusivo FEBRABAN/CNAB
 			$vlinha["cod_mov"] 				= substr($linha,  16,  2); //Código de Movimento Retorno
@@ -138,16 +137,17 @@ class RetornoCNAB240 extends RetornoBase {
 			$vlinha["valor_liquido"] 		= $this->formataNumero(substr($linha,  93, 15)); //Valor Líquido a ser Creditado
 			$vlinha["despesas"] 			= $this->formataNumero(substr($linha, 108, 15)); //Valor de Outras Despesas
 			$vlinha["creditos"] 			= $this->formataNumero(substr($linha, 123, 15)); //Valor de Outros Créditos
+			
 			$vlinha["data_ocorrencia"] 		= $this->formataData(substr($linha, 138,  8)); //Data da Ocorrência
 			$vlinha["data_credito"] 		= $this->formataData(substr($linha, 146,  8)); //Data da Efetivação do Crédito
-			$vlinha["codigo"] 				= substr($linha, 154,  4); //Código da Ocorrência
-			$vlinha["data_ocorre_cod"] 		= $this->formataData(substr($linha, 158,  8)); //Data da Ocorrência
-			$vlinha["valor_ocorrencia"] 	= $this->formataNumero(substr($linha, 166, 15)); //Valor da Ocorrência
-			$vlinha["compl_ocorrencia"] 	= substr($linha, 181, 30); //Complem. da Ocorrência
+			$vlinha["cod_ocorrencia_sac"] 				= substr($linha, 154,  4); //Código da Ocorrência
+			$vlinha["data_ocorrencia_sac"] 		= $this->formataData(substr($linha, 158,  8)); //Data da Ocorrência
+			$vlinha["valor_ocorrencia_sac"] 	= $this->formataNumero(substr($linha, 166, 15)); //Valor da Ocorrência
+			$vlinha["compl_ocorrencia_sac"] 	= substr($linha, 181, 30); //Complem. da Ocorrência
 			$vlinha["cod_bco_corr"] 		= substr($linha, 211,  3); //Cód. Banco Correspondente Compens.
-			$vlinha["N_bco_corr"] 			= substr($linha, 214, 20); //Nosso Nº Banco Correspondente
+			$vlinha["n_bco_corr"] 			= substr($linha, 214, 20); //Nosso Nº Banco Correspondente
 			$vlinha["CNAB"] 				= substr($linha, 234,  7); //Uso Exclusivo FEBRABAN/CNAB
-		return $vlinha;
+		  return $vlinha;
 	}
 
 	protected function processarTrailerLote($linha) {
@@ -178,10 +178,10 @@ class RetornoCNAB240 extends RetornoBase {
 		  return $vlinha;
 	}
 
-	/**Processa uma linha_arquivo_retorno.
-  * @param int $numLn Número_linha a ser processada
+	/**Processa uma linha do arquivo de retorno.
+  * @param int $numLn Número da linha a ser processada
 	* @param string $linha String contendo a linha a ser processada
-	* @return array Retorna um vetor associativo contendo os valores_linha processada.*/
+	* @return array Retorna um vetor associativo contendo os valores da linha processada.*/
 	public function processarLinha($numLn, $linha) {
     //é adicionado um espaço vazio no início_linha para que
 		//possamos trabalhar com índices iniciando em 1, no lugar de zero,
@@ -190,36 +190,24 @@ class RetornoCNAB240 extends RetornoBase {
 		$linha = " $linha";
 		
     $tipoLn = substr($linha,  8,  1);
+	  //echo "$tipoLn<br/>";
 
-    // Identifico qual o Segmento do Registro Detalhe se "U" ou "T"
-    if($tipoLn == 3 && substr($linha, 14,  1) == 'T')
-	    $tipoLn = static::DETALHE_T;
-    if($tipoLn == 3 && substr($linha, 14,  1) == 'U')
-	    $tipoLn = static::DETALHE_U;	  	
-
-    switch ($tipoLn) {
-       case RetornoCNAB240::HEADER_ARQUIVO: 
+    if(strcmp($tipoLn,RetornoCNAB240::HEADER_ARQUIVO)==0)
           $vlinha = $this->processarHeaderArquivo($linha);
-       break;
-       case RetornoCNAB240::HEADER_LOTE:
+    else if(strcmp($tipoLn, RetornoCNAB240::HEADER_LOTE)==0)
           $vlinha = $this->processarHeaderLote($linha);
-       break;
-       case RetornoCNAB240::DETALHE_T:
-          $vlinha = $this->processarDetalheT($linha); 
-       break;
-       case RetornoCNAB240::DETALHE_U:
+    else if(strcmp($tipoLn, RetornoCNAB240::DETALHE)==0) {
+       $tipoDetalhe = substr($linha, 14,  1);
+       if(strcmp($tipoDetalhe, static::DETALHE_T)==0)
+	        $vlinha = $this->processarDetalheT($linha); 
+       else if(strcmp($tipoDetalhe, static::DETALHE_U)==0)
           $vlinha = $this->processarDetalheU($linha);
-       break;
-       case RetornoCNAB240::TRAILER_LOTE:
-          $vlinha = $this->processarTrailerLote($linha); 
-       break;
-       case RetornoCNAB240::TRAILER_ARQUIVO: 
-          $vlinha = $this->processarTrailerArquivo($linha); 
-       break;
-       default:
-          $vlinha = NULL;
-       break;
     }
+    else if(strcmp($tipoLn, RetornoCNAB240::TRAILER_LOTE)==0)
+          $vlinha = $this->processarTrailerLote($linha); 
+    else if(strcmp($tipoLn,RetornoCNAB240::TRAILER_ARQUIVO)==0)
+          $vlinha = $this->processarTrailerArquivo($linha); 
+    else $vlinha = NULL;
 	    
     return $vlinha;
   }

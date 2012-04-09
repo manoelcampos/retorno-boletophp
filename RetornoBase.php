@@ -100,7 +100,10 @@ abstract class RetornoBase {
 	* @param string $data String contendo a data no formato DDMMAA ou DDMMAAAA.
 	* @return string Retorna a data non formato DD/MM/AAAA.*/
 	public function formataData($data) {
-	  if($data=="")
+	  if($data == "00000000" or $data == "000000")
+	    return "";
+	    
+	  if(trim($data)=="")
 		   return "";
 		//formata a data para o padrão americano MM/DD/AAAA ou MM/DD/AA (dependendo do tamanho da string $data)
 		$iano = 4; //posicao onde inicia o ano
