@@ -52,7 +52,8 @@ function linhaProcessada1($self, $numLn, $vlinha) {
 
 //--------------------------------------INÍCIO DA EXECUÇÃO DO CÓDIGO-----------------------------------------------------
 
-$fileName = "retorno_cnab400conv6.ret";
+//$fileName = "retorno_cnab400conv6.ret";
+$fileName = "CB030400.RET";
 
 //Use uma das duas instrucões abaixo (comente uma e descomente a outra)
 //$cnab400 = RetornoFactory::getRetorno($fileName, "linhaProcessada1");

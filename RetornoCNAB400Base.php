@@ -29,7 +29,7 @@ abstract class RetornoCNAB400Base extends RetornoBase {
   protected function processarHeaderArquivo($linha) {
     $vlinha = array();	
 																													    //X = ALFANUMÉRICO 9 = NUMÉRICO V = VÍRGULA DECIMAL ASSUMIDA
-		$vlinha["registro"]        = substr($linha, 1,     1); //9 Identificação do Registro Header: “0”
+		$vlinha["registro"]           = substr($linha, 1,     1); //9 Identificação do Registro Header: “0”
 		$vlinha["tipo_operacao"]      = substr($linha, 2,     1); //9 Tipo de Operação: “2”
 		$vlinha["id_tipo_operacao"]   = substr($linha, 3,     7); //X Identificação Tipo de Operação “RETORNO”
 		$vlinha["id_tipo_servico"]    = substr($linha, 10,    2); //9 Identificação do Tipo de Serviço: “01”
@@ -103,33 +103,31 @@ abstract class RetornoCNAB400Base extends RetornoBase {
 	* @return array<mixed> Retorna um vetor contendo os dados dos campos da linha trailer do arquivo.*/
 	protected function processarTrailerArquivo($linha) {
 		$vlinha = array();
-																																	 //X = ALFANUMÉRICO 9 = NUMÉRICO V = VÍRGULA DECIMAL ASSUMIDA
-		$vlinha["registro"]             = substr($linha,   1,   1); //9  Identificação do Registro Trailer: “9”
-		$vlinha["2"]                       = substr($linha,   2,   1); //9  “2”
-		$vlinha["01"]                      = substr($linha,   3,   2); //9  “01”
-		$vlinha["001"]                     = substr($linha,   5,   3); //9  “001”
-		//$vlinha["brancos"]                 = substr($linha,   8,  10); //X  Brancos
-		$vlinha["cob_simples_qtd_titulos"] = substr($linha,  18,   8); //9  Cobrança Simples - quantidade de títulos
+																																	  //X = ALFANUMÉRICO 9 = NUMÉRICO V = VÍRGULA DECIMAL ASSUMIDA
+		$vlinha["registro"]                = substr($linha,   1,   1);  //9  Identificação do Registro Trailer: “9”
+		$vlinha["retorno"]                 = substr($linha,   2,   1);  //9  “2”
+		$vlinha["tipo_registro"]           = substr($linha,   3,   2);  //9  “01”
+		$vlinha["cod_banco"]               = substr($linha,   5,   3);  
+		$vlinha["cob_simples_qtd_titulos"] = substr($linha,  18,   8);  //9  Cobrança Simples - quantidade de títulos em cobranca
 		$vlinha["cob_simples_vlr_total"]   = $this->formataNumero(substr($linha,  26,  14)); //9  v99 Cobrança Simples - valor total
-		$vlinha["cob_simples_num_aviso"]   = substr($linha,  40,   8); //9  Cobrança Simples - Número do aviso
-		//$vlinha["cob_simples_brancos"]     = substr($linha,  48,  10); //X  Cobrança Simples - Brancos
-		$vlinha["cob_vinc_qtd_titulos"]    = substr($linha,  58,   8); //9  Cobrança Vinculada - quantidade de títulos
+		$vlinha["cob_simples_num_aviso"]   = substr($linha,  40,   8);  //9  Cobrança Simples - Número do aviso
+		$vlinha["cob_vinc_qtd_titulos"]    = substr($linha,  58,   8);  //9  Cobrança Vinculada - quantidade de títulos
 		$vlinha["cob_vinc_valor_total"]    = $this->formataNumero(substr($linha,  66,  14)); //9  v99 Cobrança Vinculada - valor total
-		$vlinha["cob_vinc_num_aviso"]      = substr($linha,  80,   8); //9  Cobrança Vinculada - Número do aviso
+		$vlinha["cob_vinc_num_aviso"]      = substr($linha,  80,   8);  //9  Cobrança Vinculada - Número do aviso
 		//$vlinha["cob_vinc_brancos"]        = substr($linha,  88,  10); //X  Cobrança Vinculada - Brancos
-		$vlinha["cob_cauc_qtd_titulos"]    = substr($linha,  98,   8); //9  Cobrança Caucionada - quantidade de títulos
+		$vlinha["cob_cauc_qtd_titulos"]    = substr($linha,  98,   8);  //9  Cobrança Caucionada - quantidade de títulos
 		$vlinha["cob_cauc_vlr_total"]      = $this->formataNumero(substr($linha, 106,  14)); //9  v99 Cobrança Caucionada - valor total
-		$vlinha["cob_cauc_num_aviso"]      = substr($linha, 120,   8); //9  Cobrança Caucionada - Número do aviso
+		$vlinha["cob_cauc_num_aviso"]      = substr($linha, 120,   8);  //9  Cobrança Caucionada - Número do aviso
 		//$vlinha["cob_cauc_brancos"]        = substr($linha, 128,  10); //X  Cobrança Caucionada - Brancos
-		$vlinha["cob_desc_qtd_titulos"]    = substr($linha, 138,   8); //9  Cobrança Descontada - quantidade de títulos
+		$vlinha["cob_desc_qtd_titulos"]    = substr($linha, 138,   8);  //9  Cobrança Descontada - quantidade de títulos
 		$vlinha["cob_desc_vlr_total"]      = $this->formataNumero(substr($linha, 146,  14)); //9  v99 Cobrança Descontada - valor total
-		$vlinha["cob_desc_num_aviso"]      = substr($linha, 160,   8); //9  Cobrança Descontada - Número do aviso
+		$vlinha["cob_desc_num_aviso"]      = substr($linha, 160,   8);  //9  Cobrança Descontada - Número do aviso
 		//$vlinha["cob_desc_brancos"]        = substr($linha, 168,  50); //X  Cobrança Descontada - Brancos
-		$vlinha["cob_vendor_qtd_titulos"]  = substr($linha, 218,   8); //9  Cobrança Vendor - quantidade de títulos
+		$vlinha["cob_vendor_qtd_titulos"]  = substr($linha, 218,   8);  //9  Cobrança Vendor - quantidade de títulos
 		$vlinha["cob_vendor_vlr_total"]    = $this->formataNumero(substr($linha, 226,  14)); //9  v99 Cobrança Vendor - valor total
-		$vlinha["cob_vendor_num_aviso"]    = substr($linha, 240,   8); //9  Cobrança Vendor - Número do aviso
+		$vlinha["cob_vendor_num_aviso"]    = substr($linha, 240,   8);  //9  Cobrança Vendor - Número do aviso
 		//$vlinha["cob_vendor_brancos"]      = substr($linha, 248, 147); //X  Cobrança Vendor – Brancos
-		$vlinha["sequencial"]              = substr($linha, 395,   6); //9  Seqüencial do registro
+		$vlinha["sequencial"]              = substr($linha, 395,   6);  //9  Seqüencial do registro
 
 		return $vlinha;
 	}

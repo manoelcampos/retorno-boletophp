@@ -3,6 +3,7 @@
 require_once("RetornoCNAB240.php");
 require_once("RetornoCNAB400Conv6.php");
 require_once("RetornoCNAB400Conv7.php");
+require_once("RetornoCNAB400Bradesco.php");
 
 /**Classe que identifica o tipo de arquivo de retorno sendo carregado e instancia a classe
 * específica para leitura do mesmo.
@@ -30,6 +31,9 @@ class RetornoFactory  {
           if($len >= 240 and $len <= 242)
              return new RetornoCNAB240($fileName, $aoProcessarLinhaFunctionName);
           else if($len >= 400 and $len <= 402) {
+             if(strstr($linha, "BRADESCO"))
+               return new RetornoCNAB400Bradesco($fileName, $aoProcessarLinhaFunctionName);
+          
              //Lê o primeiro registro detalhe
              if($linha=fgets($arq, 500)) {
                 switch ($linha[0]) {
