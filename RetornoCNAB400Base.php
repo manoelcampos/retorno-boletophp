@@ -16,6 +16,8 @@ require_once("RetornoBase.php");
 abstract class RetornoCNAB400Base extends RetornoBase {
 	/**@property int HEADER_ARQUIVO Define o valor que identifica uma coluna do tipo HEADER DE ARQUIVO*/
 	const HEADER_ARQUIVO = 0;
+
+	
   /**@property int TRAILER_ARQUIVO Define o valor que identifica uma coluna do tipo TRAILER DE ARQUIVO*/
 	const TRAILER_ARQUIVO = 9;
 
@@ -150,11 +152,11 @@ abstract class RetornoCNAB400Base extends RetornoBase {
 			//como no manual CNAB400
 			$linha = " $linha";
       $tipoLn = substr($linha,  1,  1);
-		  if($tipoLn == RetornoCNAB400::HEADER_ARQUIVO) 
+		  if($tipoLn == RetornoCNAB400Base::HEADER_ARQUIVO) 
          $vlinha = $this->processarHeaderArquivo($linha);
-      else if($tipoLn == RetornoCNAB400::DETALHE)
+      else if($tipoLn == RetornoCNAB400Base::DETALHE)
 				 $vlinha = $this->processarDetalhe($linha);
-		  else if($tipoLn == RetornoCNAB400::TRAILER_ARQUIVO)
+		  else if($tipoLn == RetornoCNAB400Base::TRAILER_ARQUIVO)
 			   $vlinha = $this->processarTrailerArquivo($linha); 
 			else $vlinha = NULL;
 			return $vlinha;

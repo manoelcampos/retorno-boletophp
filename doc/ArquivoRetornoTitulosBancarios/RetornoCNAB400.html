@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
   <html xmlns="http://www.w3.org/1999/xhtml">
 		<head>
 			<!-- template designed by Marco Von Ballmoos -->
 			<title>Docs For Class RetornoCNAB400</title>
 			<link rel="stylesheet" href="../media/stylesheet.css" />
-			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+			<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
 		</head>
 		<body>
 			<div class="page-body">			
@@ -24,11 +24,11 @@
 			</div>
 	<div class="info-box-body">
         		<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">Classe para leitura de arquivos de retorno de cobranças no padrão CNAB400.<br />  Layout Padrão CNAB/Febraban 400 posições<br />.</p>
+<p class="short-description">Classe para leitura_arquivos_retorno_cobranças_padrão CNAB400.<br />  Layout Padrão CNAB/Febraban 400 posições<br />.</p>
 <p class="description"><p>Baseado na documentação para &quot;Layout de Arquivo Retorno para Convênios  na faixa numérica entre 000.001 a 999.999 (Convênios de até 6 posições). Versão Set/09&quot;  do Banco do Brasil (arquivo CBR643-6_posicoes.pdf)</p></p>
 	<ul class="tags">
 				<li><span class="field">author:</span> Manoel Campos da Silva Filho. http://manoelcampos.com/contato</li>
-				<li><span class="field">version:</span> 0.3</li>
+				<li><span class="field">version:</span> 0.1</li>
 				<li><span class="field">copyright:</span> GPLv2</li>
 			</ul>
 		<p class="notes">
@@ -93,13 +93,8 @@
 		</div>
 		<div class="info-box-body">			
 			<div class="method-summary">
-																																												
+																																				
 												<div class="method-definition">
-											<span class="method-result">RetornoCNAB400</span>
-										<a href="#__construct" title="details" class="method-name">__construct</a>
-											([<span class="var-type"></span>&nbsp;<span class="var-name">$nomeArquivo</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$aoProcessarLinhaFunctionName</span> = <span class="var-default">&quot;&quot;</span>])
-									</div>
-																<div class="method-definition">
 											<span class="method-result">array<mixed></span>
 										<a href="#processarDetalhe" title="details" class="method-name">processarDetalhe</a>
 											(<span class="var-type">string</span>&nbsp;<span class="var-name">$linha</span>)
@@ -167,48 +162,11 @@
 		<div class="info-box-body">
 			<A NAME='method_detail'></A>
 
-<a name="method__construct" id="__construct"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">Constructor __construct</span> (line <span class="line-number">22</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">RetornoCNAB400</span>
-		<span class="method-name">
-			__construct
-		</span>
-					([<span class="var-type"></span>&nbsp;<span class="var-name">$nomeArquivo</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$aoProcessarLinhaFunctionName</span> = <span class="var-default">&quot;&quot;</span>])
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$nomeArquivo</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$aoProcessarLinhaFunctionName</span>			</li>
-				</ul>
-		
-			<hr class="separator" />
-		<div class="notes">Redefinition of:</div>
-		<dl>
-			<dt><a href="../ArquivoRetornoTitulosBancarios/RetornoBase.html#method__construct">RetornoBase::__construct()</a></dt>
-						<dd>Construtor da classe.</dd>
-					</dl>
-			
-	</div>
 <a name="methodprocessarDetalhe" id="processarDetalhe"><!-- --></a>
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">processarDetalhe</span> (line <span class="line-number">55</span>)
+		<span class="method-title">processarDetalhe</span> (line <span class="line-number">51</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -238,7 +196,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">processarHeaderArquivo</span> (line <span class="line-number">29</span>)
+		<span class="method-title">processarHeaderArquivo</span> (line <span class="line-number">25</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -268,11 +226,11 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">processarLinha</span> (line <span class="line-number">165</span>)
+		<span class="method-title">processarLinha</span> (line <span class="line-number">160</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">Processa uma linha do arquivo de retorno.</p>
+<p class="short-description">Processa uma linha_arquivo_retorno.</p>
 	<ul class="tags">
 				<li><span class="field">return:</span> Retorna um vetor associativo contendo os valores_linha processada.</li>
 				<li><span class="field">access:</span> public</li>
@@ -307,7 +265,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">processarTrailerArquivo</span> (line <span class="line-number">128</span>)
+		<span class="method-title">processarTrailerArquivo</span> (line <span class="line-number">123</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -338,7 +296,7 @@
 									<!-- =========== Summary =========== -->
 					<p>Inherited From <span class="classname"><a href="../ArquivoRetornoTitulosBancarios/RetornoBase.html">RetornoBase</a></span></p>
 					<blockquote>
-													<span class="method-name"><a href="../ArquivoRetornoTitulosBancarios/RetornoBase.html#method__construct">RetornoBase::__construct()</a></span><br>
+													<span class="method-name"><a href="../ArquivoRetornoTitulosBancarios/RetornoBase.html#methodRetornoBase">RetornoBase::RetornoBase()</a></span><br>
 													<span class="method-name"><a href="../ArquivoRetornoTitulosBancarios/RetornoBase.html#methodformataData">RetornoBase::formataData()</a></span><br>
 													<span class="method-name"><a href="../ArquivoRetornoTitulosBancarios/RetornoBase.html#methodformataNumero">RetornoBase::formataNumero()</a></span><br>
 													<span class="method-name"><a href="../ArquivoRetornoTitulosBancarios/RetornoBase.html#methodgetNomeArquivo">RetornoBase::getNomeArquivo()</a></span><br>
@@ -418,7 +376,7 @@
 	</div>
 
 	<p class="notes" id="credit">
-		Documentation generated on Wed, 20 Apr 2011 09:10:48 -0300 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+		Documentation generated on Sun, 04 Apr 2010 16:46:05 -0300 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
 	</p>
 	</div></body>
 </html>

@@ -1,19 +1,19 @@
-<?php
+<?php 
 /**Classe base para leitura de arquivos de retorno de cobranças dos bancos brasileiros.<br/>
 * @copyright GPLv2
 * @package ArquivoRetornoTitulosBancarios
 * @author Manoel Campos da Silva Filho. http://manoelcampos.com/contato
-* @version 0.4
+* @version 0.1
 * @abstract
 */
-abstract class RetornoBase {
+class RetornoBase {
   /**@property string $nomeArquivo Nome do arquivo de texto a ser lido
 	*/
-  private $nomeArquivo = "retorno.ret";
+  var $nomeArquivo = "retorno.ret";
 	/**@property string $aoProcessarLinha Armazena o nome da função handler 
 	* que será chamada após o processamento de cada linha do arquivo, com
 	* isto, definindo um evento aoProcessarLinha.	*/
-	protected $aoProcessarLinha="";
+	var $aoProcessarLinha="";
 
 	/**Construtor da classe.
 	* @param string $nomeArquivo Nome do arquivo de retorno do banco.
@@ -21,16 +21,16 @@ abstract class RetornoBase {
 	* ao evento aoProcessarLinha. Se for informado um valor ao parâmetro, a função, indicada por ele, 
 	* será executada após cada linha ser processada no arquivo de retorno.
 	*/
-	public function __construct($nomeArquivo=NULL, $aoProcessarLinhaFunctionName="") {
+	function RetornoBase($nomeArquivo=NULL, $aoProcessarLinhaFunctionName="") {
 			if(isset($nomeArquivo))
 				$this->setNomeArquivo($nomeArquivo);
 	   $this->setAoProcessarLinha($aoProcessarLinhaFunctionName);
 	}
 	
 	/**Setter para o atributo @see nomeArquivo*/
-	public function setNomeArquivo($nomeArquivo) { $this->nomeArquivo = $nomeArquivo; }
+	function setNomeArquivo($nomeArquivo) { $this->arquivo = $nomeArquivo; }
 	/**Getter para o atributo @see nomeArquivo*/
-	public function getNomeArquivo() { return $this->nomeArquivo; }
+	function getNomeArquivo() { return $this->nomeArquivo; }
 
 	/**Processa uma linha do arquivo de retorno. O método é abstrato e deve ser implementado nas sub-classes.
   * @param int $numLn Número da linha a ser processada
@@ -38,7 +38,7 @@ abstract class RetornoBase {
 	* @return array Retorna um vetor associativo contendo os valores da linha processada.
 	* @abstract
 	*/
-	public abstract function processarLinha($numLn, $linha);
+	function processarLinha($numLn, $linha) {}
 	
 	/**Atribui uma função ao evento aoProcessarLinha.
 	* @param string $handlerFunctionName String contendo o nome da função handler,
@@ -50,29 +50,28 @@ abstract class RetornoBase {
 	* como setar um campo em uma tabela do banco de dados, para indicar
 	* o pagamento de um boleto de um determinado cliente.
 	*/
-	public function setAoProcessarLinha($handlerFunctionName) {
+	function setAoProcessarLinha($handlerFunctionName) {
 		 $this->aoProcessarLinha = $handlerFunctionName;
   }
 
 	/**Se existe uma função handler associadao ao evento aoProcessarLinha,
 	* executa a mesma, disparando o evento.
-  * @param RetornoBase $self Objeto da classe RetornoBase que está processando o arquivo de retorno
 	* @param int $numLn Número da linha processada.
 	* @param array $vlinha Vetor contendo a linha processada, contendo os valores da armazenados
 	* nas colunas deste vetor. Nesta função o usuário pode fazer o que desejar,
 	* como setar um campo em uma tabela do banco de dados, para indicar
 	* o pagamento de um boleto de um determinado cliente.
 	* @see setAoProcessarLinha*/
-	public function triggerAoProcessarLinha($self, $numLn, $vlinha) {
+	function triggerAoProcessarLinha($numLn, $vlinha) {
 		//Obtém o nome da função handler associada ao evento aoProcessarLinha
 		$funcName = $this->aoProcessarLinha;
 		//Se foi associada alguma função ao evento aoProcessarLinha e 
 		//a função existe, executa a mesma, que obrigatoriamente
 		//deve ter sido definida pelo usuário, fora da classe,
-		//com a assinatura funcao($self, $numLn, $vlinha).
+		//com a assinatura funcao($numLn, $vlinha).
     if ($funcName != "" and function_exists($funcName)) 
-       //chama a função handler, passando o núm. da linha processada e um vetor com os valores da mesma
-		   $funcName($self, $numLn, $vlinha); 
+       //chama a função handler, passando núm. da linha processada e um vetor com os valores da mesma
+		   $funcName($numLn, $vlinha); 
   }
 	
 	/**Formata uma string, contendo um valor real (float) sem o separador de decimais,
@@ -83,7 +82,7 @@ abstract class RetornoBase {
 	* representado em $valor.
 	* @return float Retorna o número representado em $valor, no seu formato float,
 	* contendo o separador de decimais.*/
-	public function formataNumero($valor, $numCasasDecimais=2) {
+	function formataNumero($valor, $numCasasDecimais=2) {
 	  if($valor=="")
 		   return 0;
 		$casas = $numCasasDecimais;
@@ -95,22 +94,19 @@ abstract class RetornoBase {
 	  return $valor;
 	}
 
-	/**Formata uma string, contendo uma data sem o separador, no formato DDMMAA ou DDMMAAAA,
+	/**Formata uma string, contendo uma data sem o separador, no formato DDMMAA,
 	* para o formato DD/MM/AAAA.
-	* @param string $data String contendo a data no formato DDMMAA ou DDMMAAAA.
+	* @param string $data String contendo a data no formato DDMMAA.
 	* @return string Retorna a data non formato DD/MM/AAAA.*/
-	public function formataData($data) {
-	  if($data == "00000000" or $data == "000000")
-	    return "";
-	    
-	  if(trim($data)=="")
+	function formataData($data) {
+	  if($data=="")
 		   return "";
-		//formata a data para o padrão americano MM/DD/AAAA ou MM/DD/AA (dependendo do tamanho da string $data)
-		$iano = 4; //posicao onde inicia o ano
-		$data =  substr($data, 2, 2) . "/". substr($data, 0, 2) . "/" . substr($data, $iano, strlen($data)-$iano);
+		//formata a data par ao padrão americano MM/DD/AA
+		$data =  substr($data, 2, 2) . "/". substr($data, 0, 2) . "/" . substr($data, 4, 2);
 
 		//formata a data, a partir do padrão americano, para o padrão DD/MM/AAAA
 		return date("d/m/Y", strtotime($data));
+
 	}
 }
 

@@ -1,4 +1,4 @@
-<?
+<?php 
 /**Exemplo de uso da classe para processamento de arquivo de retorno de cobranças de 400 posicões do Bradesco.<br/>
 * @copyright GPLv2
 * @package LeituraArquivoRetorno

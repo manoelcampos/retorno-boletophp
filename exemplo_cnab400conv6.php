@@ -1,4 +1,4 @@
-<?
+<?php 
 /**Exemplo de uso da classe para processamento de arquivo de retorno de cobranças em formato FEBRABAN/CNAB400,
 * testado com arquivo de retorno do Banco do Brasil com convênio de 6 posições.<br/>
 * @copyright GPLv2

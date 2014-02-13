@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
   <html xmlns="http://www.w3.org/1999/xhtml">
 		<head>
 			<!-- template designed by Marco Von Ballmoos -->
 			<title>Docs For Class RetornoBase</title>
 			<link rel="stylesheet" href="../media/stylesheet.css" />
-			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+			<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
 		</head>
 		<body>
 			<div class="page-body">			
@@ -26,7 +26,7 @@
 <p class="short-description">Classe base para leitura de arquivos de retorno de cobranças dos bancos brasileiros.<br /></p>
 	<ul class="tags">
 				<li><span class="field">author:</span> Manoel Campos da Silva Filho. http://manoelcampos.com/contato</li>
-				<li><span class="field">version:</span> 0.2</li>
+				<li><span class="field">version:</span> 0.1</li>
 				<li><span class="field">copyright:</span> GPLv2</li>
 				<li><span class="field">abstract:</span> </li>
 			</ul>
@@ -59,13 +59,13 @@
 								<tr>
 					<td style="padding-right: 2em"><a href="../ArquivoRetornoTitulosBancarios/RetornoCNAB240.html">RetornoCNAB240</a></td>
 					<td>
-											Classe para leitura de arquivos de retorno de cobranças no padrão CNAB240.<br />
+											Classe para leitura_arquivos_retorno_cobranças_padrão CNAB240.<br />
 										</td>
 				</tr>
 								<tr>
 					<td style="padding-right: 2em"><a href="../ArquivoRetornoTitulosBancarios/RetornoCNAB400.html">RetornoCNAB400</a></td>
 					<td>
-											Classe para leitura de arquivos de retorno de cobranças no padrão CNAB400.<br />  Layout Padrão CNAB/Febraban 400 posições<br />.
+											Classe para leitura_arquivos_retorno_cobranças_padrão CNAB400.<br />  Layout Padrão CNAB/Febraban 400 posições<br />.
 										</td>
 				</tr>
 							</table>
@@ -114,7 +114,7 @@
 																																																																				
 												<div class="method-definition">
 											<span class="method-result">RetornoBase</span>
-										<a href="#__construct" title="details" class="method-name">__construct</a>
+										<a href="#RetornoBase" title="details" class="method-name">RetornoBase</a>
 											([<span class="var-type">string</span>&nbsp;<span class="var-name">$nomeArquivo</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$aoProcessarLinhaFunctionName</span> = <span class="var-default">&quot;&quot;</span>])
 									</div>
 																<div class="method-definition">
@@ -231,11 +231,11 @@
 		<div class="info-box-body">
 			<A NAME='method_detail'></A>
 
-<a name="method__construct" id="__construct"><!-- --></a>
+<a name="methodRetornoBase" id="RetornoBase"><!-- --></a>
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">Constructor __construct</span> (line <span class="line-number">24</span>)
+		<span class="method-title">Constructor RetornoBase</span> (line <span class="line-number">24</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -247,7 +247,7 @@
 	<div class="method-signature">
 		<span class="method-result">RetornoBase</span>
 		<span class="method-name">
-			__construct
+			RetornoBase
 		</span>
 					([<span class="var-type">string</span>&nbsp;<span class="var-name">$nomeArquivo</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$aoProcessarLinhaFunctionName</span> = <span class="var-default">&quot;&quot;</span>])
 			</div>
@@ -262,16 +262,6 @@
 				</ul>
 		
 			
-			<hr class="separator" />
-		<div class="notes">Redefined in descendants as:</div>
-		<ul class="redefinitions">
-					<li>
-				<a href="../ArquivoRetornoTitulosBancarios/RetornoCNAB240.html#method__construct">RetornoCNAB240::__construct()</a>
-							</li>
-					<li>
-				<a href="../ArquivoRetornoTitulosBancarios/RetornoCNAB400.html#method__construct">RetornoCNAB400::__construct()</a>
-							</li>
-				</ul>
 	</div>
 <a name="methodformataData" id="formataData"><!-- --></a>
 <div class="evenrow">
@@ -281,7 +271,7 @@
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">Formata uma string, contendo uma data sem o separador, no formato DDMMAA ou DDMMAAAA,  para o formato DD/MM/AAAA.</p>
+<p class="short-description">Formata uma string, contendo uma data sem o separador, no formato DDMMAA,  para o formato DD/MM/AAAA.</p>
 	<ul class="tags">
 				<li><span class="field">return:</span> Retorna a data non formato DD/MM/AAAA.</li>
 				<li><span class="field">access:</span> public</li>
@@ -298,7 +288,7 @@
 			<ul class="parameters">
 					<li>
 				<span class="var-type">string</span>
-				<span class="var-name">$data</span><span class="var-description">: String contendo a data no formato DDMMAA ou DDMMAAAA.</span>			</li>
+				<span class="var-name">$data</span><span class="var-description">: String contendo a data no formato DDMMAA.</span>			</li>
 				</ul>
 		
 			
@@ -402,7 +392,7 @@
 							</li>
 					<li>
 				<a href="../ArquivoRetornoTitulosBancarios/RetornoCNAB400.html#methodprocessarLinha">RetornoCNAB400::processarLinha()</a>
-								: Processa uma linha do arquivo de retorno.
+								: Processa uma linha_arquivo_retorno.
 							</li>
 				</ul>
 	</div>
@@ -503,7 +493,7 @@
 
 
 	<p class="notes" id="credit">
-		Documentation generated on Wed, 20 Apr 2011 09:10:48 -0300 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+		Documentation generated on Sun, 04 Apr 2010 16:46:05 -0300 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
 	</p>
 	</div></body>
 </html>

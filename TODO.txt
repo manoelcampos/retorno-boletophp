@@ -1,1 +1,2 @@
-Verificar se os bancos que usam os formatos CNAB240 e CNAB400, não há nenhuma diferença de um para outro.
+Verificar se os bancos que usam estes formatos, não há nenhuma diferença de um para outro.
+Testar o CNAB240

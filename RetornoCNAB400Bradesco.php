@@ -88,8 +88,8 @@ class RetornoCNAB400Bradesco extends RetornoCNAB400Base {
 		$vlinha["outros_recebimentos"] = $this->formataNumero(substr($linha, 280,  13)); //9  v99 Outros recebimentos
 		$vlinha["motivo_cod_ocorrencia"] = substr($linha, 319,   10);  //Motivos das Rejeições para 
                                                                    //os Códigos de Ocorrência da Posição 109 a 110 
-    $vlinha["num_cartorio"] = substr($linha, 369,   2);
-		$vlinha["num_protocolo"] = substr($linha, 371,   10);
+    $vlinha["num_cartorio"]        = substr($linha, 369,   2);
+		$vlinha["num_protocolo"]       = substr($linha, 371,   10);
 		
 		
 		$vlinha["valor_abatimento"]    = $this->formataNumero(substr($linha, 228,  13)); //9  v99 Valor do abatimento
