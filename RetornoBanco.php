@@ -27,9 +27,9 @@ class RetornoBanco {
 	function processar() {
 		$linhas = file($this->retorno->getNomeArquivo());  
 		foreach($linhas as $numLn => $linha) {
-		   $vlinha = $this->retorno->processarLinha($numLn, $linha);
+		   	 $vlinha = $this->retorno->processarLinha($numLn, $linha);
 			 //Dispara o evento aoProcessarLinha, caso haja alguma função handler associada a ele
-			 $this->retorno->triggerAoProcessarLinha($numLn, $vlinha);
+			 $this->retorno->triggerAoProcessarLinha($this->retorno, $numLn, $vlinha);
 		}
 	}
 }

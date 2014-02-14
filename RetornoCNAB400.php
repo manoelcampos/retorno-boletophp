@@ -13,11 +13,11 @@ require_once("RetornoBase.php");
 */
 class RetornoCNAB400 extends RetornoBase {
 	/**@property int HEADER_ARQUIVO Define o valor que identifica uma coluna do tipo HEADER DE ARQUIVO*/
-	var $HEADER_ARQUIVO = 0;
-  /**@property int DETALHE Define o valor que identifica uma coluna do tipo DETALHE*/
-	var $DETALHE = 1;
-  /**@property int TRAILER_ARQUIVO Define o valor que identifica uma coluna do tipo TRAILER DE ARQUIVO*/
-	var $TRAILER_ARQUIVO = 9;
+	const HEADER_ARQUIVO = 0;
+	/**@property int DETALHE Define o valor que identifica uma coluna do tipo DETALHE*/
+	const DETALHE = 1;
+	/**@property int TRAILER_ARQUIVO Define o valor que identifica uma coluna do tipo TRAILER DE ARQUIVO*/
+	const TRAILER_ARQUIVO = 9;
 
 	/**Processa a linha header do arquivo
 	* @param string $linha Linha do header de arquivo processado
@@ -173,11 +173,11 @@ class RetornoCNAB400 extends RetornoBase {
 			$linha = " $linha";
       $tipoLn = substr($linha,  1,  1);
 
-		  if($tipoLn == $this->HEADER_ARQUIVO) 
+		  if($tipoLn == RetornoCNAB400::HEADER_ARQUIVO) 
          $vlinha = $this->processarHeaderArquivo($linha);
-      else if($tipoLn == $this->DETALHE)
+      else if($tipoLn == RetornoCNAB400::DETALHE)
 				 $vlinha = $this->processarDetalhe($linha);
-		  else if($tipoLn == $this->TRAILER_ARQUIVO)
+		  else if($tipoLn == RetornoCNAB400::TRAILER_ARQUIVO)
 			   $vlinha = $this->processarTrailerArquivo($linha); 
 			return $vlinha;
   }

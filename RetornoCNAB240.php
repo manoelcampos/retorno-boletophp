@@ -11,15 +11,15 @@ require_once("RetornoBase.php");
 */
 class RetornoCNAB240 extends RetornoBase {
 	/**@property int HEADER_ARQUIVO Define o valor que identifica uma coluna do tipo HEADER DE ARQUIVO*/
-	var $HEADER_ARQUIVO = 0;
-  /**@property int HEADER_LOTE Define o valor que identifica uma coluna do tipo HEADER DE LOTE*/
-	var $HEADER_LOTE = 1;
-  /**@property int DETALHE Define o valor que identifica uma coluna do tipo DETALHE*/
-	var $DETALHE = 3;
-  /**@property int TRAILER_LOTE Define o valor que identifica uma coluna do tipo TRAILER DEs LOTE*/
-	var $TRAILER_LOTE = 5;
-  /**@property int TRAILER_ARQUIVO Define o valor que identifica uma coluna do tipo TRAILER DE ARQUIVO*/
-	var $TRAILER_ARQUIVO = 9;
+	const HEADER_ARQUIVO = 0;
+	/**@property int HEADER_LOTE Define o valor que identifica uma coluna do tipo HEADER DE LOTE*/
+	const HEADER_LOTE = 1;
+	/**@property int DETALHE Define o valor que identifica uma coluna do tipo DETALHE*/
+	const DETALHE = 3;
+	/**@property int TRAILER_LOTE Define o valor que identifica uma coluna do tipo TRAILER DEs LOTE*/
+	const TRAILER_LOTE = 5;
+	/**@property int TRAILER_ARQUIVO Define o valor que identifica uma coluna do tipo TRAILER DE ARQUIVO*/
+	const TRAILER_ARQUIVO = 9;
 
   function processarHeaderArquivo($linha) {
     $vlinha = array();
@@ -154,17 +154,17 @@ class RetornoCNAB240 extends RetornoBase {
 			$linha = " $linha";
       $tipoLn = substr($linha,  8,  1);
 
-		  if($tipoLn == $this->HEADER_ARQUIVO) 
+	  if($tipoLn == RetornoCNAB240::HEADER_ARQUIVO) 
          $vlinha = $this->processarHeaderArquivo($linha);
-  	  else if($tipoLn == $this->HEADER_LOTE) 
-			   $vlinha = $this->processarHeaderLote($linha);
-      else if($tipoLn == $this->DETALHE) 
-				 $vlinha = $this->processarDetalhe($linha);
-		  else if($tipoLn == $this->TRAILER_LOTE) 
-         $vlinha = $this->processarTrailerLote($linha); 
-		  else if($tipoLn == $this->TRAILER_ARQUIVO) 
-			   $vlinha = $this->processarTrailerArquivo($linha); 
-			return $vlinha;
+  	  else if($tipoLn == RetornoCNAB240::HEADER_LOTE) 
+			$vlinha = $this->processarHeaderLote($linha);
+      else if($tipoLn == RetornoCNAB240::DETALHE) 
+			$vlinha = $this->processarDetalhe($linha);
+	  else if($tipoLn == RetornoCNAB240::TRAILER_LOTE) 
+			$vlinha = $this->processarTrailerLote($linha); 
+	  else if($tipoLn == RetornoCNAB240::TRAILER_ARQUIVO) 
+		   $vlinha = $this->processarTrailerArquivo($linha); 
+	  return $vlinha;
   }
 }
 

@@ -32,8 +32,9 @@ class RetornoBase {
 	/**Getter para o atributo @see nomeArquivo*/
 	function getNomeArquivo() { return $this->nomeArquivo; }
 
-	/**Processa uma linha do arquivo de retorno. O método é abstrato e deve ser implementado nas sub-classes.
-  * @param int $numLn Número da linha a ser processada
+	/**
+	* Processa uma linha do arquivo de retorno. O método é abstrato e deve ser implementado nas sub-classes.
+  	* @param int $numLn Número da linha a ser processada
 	* @param string $linha String contendo a linha a ser processada
 	* @return array Retorna um vetor associativo contendo os valores da linha processada.
 	* @abstract
@@ -62,16 +63,16 @@ class RetornoBase {
 	* como setar um campo em uma tabela do banco de dados, para indicar
 	* o pagamento de um boleto de um determinado cliente.
 	* @see setAoProcessarLinha*/
-	function triggerAoProcessarLinha($numLn, $vlinha) {
+	function triggerAoProcessarLinha($self, $numLn, $vlinha) {
 		//Obtém o nome da função handler associada ao evento aoProcessarLinha
 		$funcName = $this->aoProcessarLinha;
 		//Se foi associada alguma função ao evento aoProcessarLinha e 
 		//a função existe, executa a mesma, que obrigatoriamente
 		//deve ter sido definida pelo usuário, fora da classe,
 		//com a assinatura funcao($numLn, $vlinha).
-    if ($funcName != "" and function_exists($funcName)) 
-       //chama a função handler, passando núm. da linha processada e um vetor com os valores da mesma
-		   $funcName($numLn, $vlinha); 
+		if ($funcName != "" and function_exists($funcName)) 
+		   	   //chama a função handler, passando núm. da linha processada e um vetor com os valores da mesma
+			   $funcName($self, $numLn, $vlinha); 
   }
 	
 	/**Formata uma string, contendo um valor real (float) sem o separador de decimais,

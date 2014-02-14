@@ -27,7 +27,7 @@ function linhaProcessada($self, $numLn, $vlinha) {
   if($vlinha) {
 	  if($vlinha["registro"] == $self::DETALHE) {
       printf("%08d: ", $numLn);
-      echo "Nosso N&uacute;mero <b>".$vlinha['nosso_numero']."</b> ".
+      echo get_class($self) . ": Nosso N&uacute;mero <b>".$vlinha['nosso_numero']."</b> ".
            "Data <b>".$vlinha["data_ocorrencia"]."</b> ". 
            "Valor <b>".$vlinha["valor"]."</b><br/>\n";
     }
@@ -45,7 +45,7 @@ function linhaProcessada1($self, $numLn, $vlinha) {
   printf("%08d) ", $numLn);
   if($vlinha) {
     foreach($vlinha as $nome_indice => $valor)
-      echo "$nome_indice: <b>$valor</b><br/>\n ";
+      echo get_class($self) . ": $nome_indice: <b>$valor</b><br/>\n ";
     echo "<br/>\n";
   } else echo "Tipo da linha n&atilde;o identificado<br/>\n";
 }

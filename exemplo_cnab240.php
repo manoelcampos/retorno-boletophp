@@ -41,7 +41,7 @@ function linhaProcessada($self, $numLn, $vlinha) {
 		//duas linhas (T e U). Assim, nestes casos, pode-se fazer apenas um 
 		//if($vlinha["registro"] == $self::DETALHE)
 	  else if($vlinha["registro"] == $self::DETALHE && $vlinha["segmento"] == "T") {
-		  echo "Nosso N&uacute;mero: <b>".$vlinha['nosso_numero']."</b> - 
+		  echo get_class($self) . ": Nosso N&uacute;mero: <b>".$vlinha['nosso_numero']."</b> - 
 		  Venc: <b>".$vlinha['vencimento']."</b>".
 		  " Vlr Titulo: <b>R\$ ".number_format($vlinha['valor'], 2, ',', '')."</b> - ".
 		  " Vlr Tarifa: <b>R\$ ".number_format($vlinha['valor_tarifa'], 2, ',', '')."</b><br/>";
@@ -60,7 +60,7 @@ function linhaProcessada1($self, $numLn, $vlinha) {
   printf("%08d) ", $numLn);
   if($vlinha) {
     foreach($vlinha as $nome_indice => $valor)
-      echo "$nome_indice: <b>$valor</b><br/>\n ";
+      echo get_class($self) . ": $nome_indice: <b>$valor</b><br/>\n ";
   } else echo "Tipo da linha n&atilde;o identificado<br/>\n";
   echo "<br/>\n";
   
@@ -68,8 +68,7 @@ function linhaProcessada1($self, $numLn, $vlinha) {
 
 //--------------------------------------INÍCIO DA EXECUÇÃO DO CÓDIGO-----------------------------------------------------
 
-//$fileName = "retorno_cnab240.ret";
-$fileName = "CB030400.RET";
+$fileName = "retorno_cnab240.ret";
 
 //Use uma das duas instrucões abaixo (comente uma e descomente a outra)
 //$cnab240 = RetornoFactory::getRetorno($fileName, "linhaProcessada");
