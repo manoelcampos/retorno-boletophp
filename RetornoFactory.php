@@ -27,6 +27,7 @@ class RetornoFactory  {
     if($arq = fopen($fileName, "r")) {
        //Lê o header do arquivo
        if($linha=fgets($arq, 500)) {
+          //echo "<h1>Arquivo: $fileName. Linha: $linha</h1>";
           $len = strlen($linha);
           if($len >= 240 and $len <= 242)
              return new RetornoCNAB240($fileName, $aoProcessarLinhaFunctionName);

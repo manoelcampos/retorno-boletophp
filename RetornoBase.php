@@ -7,9 +7,8 @@
 * @abstract
 */
 class RetornoBase {
-  /**@property string $nomeArquivo Nome do arquivo de texto a ser lido
-	*/
-  var $nomeArquivo = "retorno.ret";
+    /**@property string $nomeArquivo Nome do arquivo de texto a ser lido*/
+    var $nomeArquivo = "";
 	/**@property string $aoProcessarLinha Armazena o nome da função handler 
 	* que será chamada após o processamento de cada linha do arquivo, com
 	* isto, definindo um evento aoProcessarLinha.	*/
@@ -28,7 +27,7 @@ class RetornoBase {
 	}
 	
 	/**Setter para o atributo @see nomeArquivo*/
-	function setNomeArquivo($nomeArquivo) { $this->arquivo = $nomeArquivo; }
+	function setNomeArquivo($nomeArquivo) { $this->nomeArquivo = $nomeArquivo; }
 	/**Getter para o atributo @see nomeArquivo*/
 	function getNomeArquivo() { return $this->nomeArquivo; }
 
