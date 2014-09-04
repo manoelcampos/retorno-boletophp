@@ -9,9 +9,9 @@
 class RetornoBase {
     /**@property string $nomeArquivo Nome do arquivo de texto a ser lido*/
     var $nomeArquivo = "";
-	/**@property string $aoProcessarLinha Armazena o nome da função handler 
-	* que será chamada após o processamento de cada linha do arquivo, com
-	* isto, definindo um evento aoProcessarLinha.	*/
+	/**@property string/RetornoBancoInterface $aoProcessarLinha Armazena o nome da função handler 
+     * ou objeto que será chamada após o processamento de cada linha do arquivo (no caso do objeto,
+     * será chamado o método aoProcessarLinha). Com isto, definindo um evento aoProcessarLinha.	*/
 	var $aoProcessarLinha="";
 
 	/**Construtor da classe.
@@ -51,6 +51,8 @@ class RetornoBase {
 	* o pagamento de um boleto de um determinado cliente.
 	*/
 	function setAoProcessarLinha($handlerFunctionName) {
+         if (is_object($handlerFunctionName) && !($handlerFunctionName instanceof RetornoBancoInterface))
+             throw new Exception("Se o handler para processar linha for um objeto, este deve implementar a interface RetornoBancoInterface!");
 		 $this->aoProcessarLinha = $handlerFunctionName;
   }
 
@@ -65,11 +67,14 @@ class RetornoBase {
 	function triggerAoProcessarLinha($self, $numLn, $vlinha) {
 		//Obtém o nome da função handler associada ao evento aoProcessarLinha
 		$funcName = $this->aoProcessarLinha;
+        if (is_object($funcName)) {
+            $funcName->aoProcessarLinha($self, $numLn, $vlinha);
+            
 		//Se foi associada alguma função ao evento aoProcessarLinha e 
 		//a função existe, executa a mesma, que obrigatoriamente
 		//deve ter sido definida pelo usuário, fora da classe,
 		//com a assinatura funcao($numLn, $vlinha).
-		if ($funcName != "" and function_exists($funcName)) 
+        } elseif ($funcName != "" and function_exists($funcName)) 
 		   	   //chama a função handler, passando núm. da linha processada e um vetor com os valores da mesma
 			   $funcName($self, $numLn, $vlinha); 
   }
