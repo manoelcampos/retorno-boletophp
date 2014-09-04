@@ -6,8 +6,8 @@ require_once("RetornoCNAB400Base.php");
 * (arquivo layout_cobranca_port_bradesco.pdf)
 * @copyright GPLv2
 * @package ArquivoRetornoTitulosBancarios
-* @author Manoel Campos da Silva Filho. http://manoelcampos.com/contato
-* @version 0.4
+* @author Manoel Campos da Silva Filho. http://manoelcampos.com/contato (Modificado por Gilberto C. de Almeida <gibalmeida@gmail.com> conforme layout do Manual de Procedimentos Nro. 4008.524.0121 do Bradesco) 
+* @version 0.5
 */
 class RetornoCNAB400Bradesco extends RetornoCNAB400Base {
   /**@property int DETALHE Define o valor que identifica uma coluna do tipo DETALHE*/
@@ -69,7 +69,7 @@ class RetornoCNAB400Bradesco extends RetornoCNAB400Base {
     $vlinha["id_ocorrencia"]       = substr($linha, 109,   2);  //Identificação de Ocorrência (vide pg 47)
 		$vlinha["data_ocorrencia"]     = $this->formataData(substr($linha, 111,   6)); //X  Data da Entrada/Liquidação (DDMMAA)
 		$vlinha["num_documento"]       = substr($linha, 117,  10);  //A  Número título dado pelo cedente
-		//$vlinha["id_titulo_banco"]     = substr($linha, 127,  20);  //mesmo valor que o campo nosso_numero (indicado anteriormente)
+		$vlinha["id_titulo_banco"]     = substr($linha, 127,  20);  //mesmo valor que o campo nosso_numero (indicado anteriormente)
 		$vlinha["data_vencimento"]     = $this->formataData(substr($linha, 147,   6));  //9  Data de vencimento (DDMMAA) 
 		$vlinha["valor"]=$this->formataNumero(substr($linha, 153,  13)); //9  v99 Valor do título
 		$vlinha["cod_banco"]           = substr($linha, 166,   3);  //9  Código do banco recebedor 
@@ -81,24 +81,20 @@ class RetornoCNAB400Bradesco extends RetornoCNAB400Base {
 
 		$vlinha["outras_despesas"]     = $this->formataNumero(substr($linha, 189,  13)); //9  v99 Outras despesas
 		$vlinha["juros_atraso"]        = $this->formataNumero(substr($linha, 202,  13)); //9  v99 Juros atraso
-		$vlinha["iof"]                 = $this->formataNumero(substr($linha, 215,  13)); //9  v99 IOF 
+		$vlinha["iof"]                 = $this->formataNumero(substr($linha, 215,  13)); //9  v99 IOF
+		$vlinha["valor_abatimento"]    = $this->formataNumero(substr($linha, 228,  13)); //9  v99 Valor do abatimento        
 		$vlinha["desconto_concedido"]  = $this->formataNumero(substr($linha, 241,  13)); //9  v99 Desconto concedido 
 		$vlinha["valor_recebido"]      = $this->formataNumero(substr($linha, 254,  13)); //9  v99 Valor pago
 		$vlinha["juros_mora"]          = $this->formataNumero(substr($linha, 267,  13)); //9  v99 Juros de mora
 		$vlinha["outros_recebimentos"] = $this->formataNumero(substr($linha, 280,  13)); //9  v99 Outros recebimentos
+		$vlinha["motivo_ocorrencia"]   =  substr($linha, 295,  1);                       //X  A - Aceito ; D - Desprezado
+        $vlinha["data_credito"]        = $this->formataData(substr($linha, 296,   6));   //9  Data do crédito
+        $vlinha["origem_pagamento"]    = substr($linha, 302,  2);                        //X  Origem Pagamento
+        $vlinha["cod_banco_cheque"]    = substr($linha, 315,  4);                        //X  Código do banco (Quando cheque Bradesco informe 0237)
 		$vlinha["motivo_cod_ocorrencia"] = substr($linha, 319,   10);  //Motivos das Rejeições para 
                                                                    //os Códigos de Ocorrência da Posição 109 a 110 
-    $vlinha["num_cartorio"]        = substr($linha, 369,   2);
+        $vlinha["num_cartorio"]        = substr($linha, 369,   2);	
 		$vlinha["num_protocolo"]       = substr($linha, 371,   10);
-		
-		
-		$vlinha["valor_abatimento"]    = $this->formataNumero(substr($linha, 228,  13)); //9  v99 Valor do abatimento
-		$vlinha["abatimento_nao_aprov"]= $this->formataNumero(substr($linha, 293,  13)); //9  v99 Abatimento não aproveitado pelo sacado
-		$vlinha["valor_lancamento"]    = $this->formataNumero(substr($linha, 306,  13)); //9  v99 Valor do lançamento
-		$vlinha["indicativo_dc"]       = substr($linha, 319,   1); //9  Indicativo de débito/crédito - ver nota 11
-		$vlinha["indicador_valor"]     = substr($linha, 320,   1); //9  Indicador de valor -ver  nota 12
-		$vlinha["valor_ajuste"]        = $this->formataNumero(substr($linha, 321,  12)); //9  v99 Valor do ajuste - ver nota 13
-
 		$vlinha["sequencial"]          = substr($linha, 395,   6); //9 Seqüencial do registro
 
 		return $vlinha;
@@ -136,8 +132,8 @@ class RetornoCNAB400Bradesco extends RetornoCNAB400Base {
 		$vlinha["valor_regs12"]            = $this->formataNumero(substr($linha,  160,  12)); //Valor dos  Registros- Ocorrência 12
 		$vlinha["qtd_regs19"]              = substr($linha,  172,   5);  //Quantidade  de Registros- Ocorrência 19
 		$vlinha["valor_regs19"]            = $this->formataNumero(substr($linha,  177,  12)); //Valor dos  Registros- Ocorrência 19
-    $vlinha["valor_total_rateios"]     = $this->formataNumero(substr($linha,  363,  15));
-    $vlinha["qtd_rateios"]             = substr($linha,  378,   8);
+        $vlinha["valor_total_rateios"]     = $this->formataNumero(substr($linha,  363,  15));
+        $vlinha["qtd_rateios"]             = substr($linha,  378,   8);
 
 		$vlinha["sequencial"]              = substr($linha, 395,   6);  //9  Seqüencial do registro
 
