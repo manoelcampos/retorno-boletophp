@@ -1,0 +1,6 @@
+{
+    "name": "Manoel Campos da Silva Filho",
+    "require-dev": {
+        "phpdocumentor/phpdocumentor": "2.*"
+    }
+}

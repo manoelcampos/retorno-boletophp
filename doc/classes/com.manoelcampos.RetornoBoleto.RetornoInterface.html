@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>Documentação do Módulo para Processamento de Arquivos de Retorno de Títulos Bancários Brasileiros</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+        <script type="text/javascript">
+        function loadExternalCodeSnippets() {
+            Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+                var src = pre.getAttribute('data-src');
+                var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+                var language = 'php';
+
+                var code = document.createElement('code');
+                code.className = 'language-' + language;
+
+                pre.textContent = '';
+
+                code.textContent = 'Loading…';
+
+                pre.appendChild(code);
+
+                var xhr = new XMLHttpRequest();
+
+                xhr.open('GET', src, true);
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4) {
+
+                        if (xhr.status < 400 && xhr.responseText) {
+                            code.textContent = xhr.responseText;
+
+                            Prism.highlightElement(code);
+                        }
+                        else if (xhr.status >= 400) {
+                            code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                        }
+                        else {
+                            code.textContent = '✖ Error: File does not exist or is empty';
+                        }
+                    }
+                };
+
+                xhr.send(null);
+            });
+        }
+
+        $(document).ready(function(){
+            loadExternalCodeSnippets();
+        });
+        $('#source-view').on('shown', function () {
+            loadExternalCodeSnippets();
+        })
+    </script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">Documentação do Módulo para Processamento de Arquivos de Retorno de Títulos Bancários Brasileiros</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/com.html">\com</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">86</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1233303562"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-1233303562" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-989465745"></a>
+                                <a href="../namespaces/com.html" style="margin-left: 30px; padding-left: 0">com</a>
+            </div>
+            <div id="namespace-989465745" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-486310422"></a>
+                                <a href="../namespaces/com.manoelcampos.html" style="margin-left: 30px; padding-left: 0">manoelcampos</a>
+            </div>
+            <div id="namespace-486310422" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-159838480"></a>
+                                <a href="../namespaces/com.manoelcampos.RetornoBoleto.html" style="margin-left: 30px; padding-left: 0">RetornoBoleto</a>
+            </div>
+            <div id="namespace-159838480" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/com.manoelcampos.RetornoBoleto.ProcessaLinhaObservable.html">ProcessaLinhaObservable</a></li>
+                                                    <li class="interface"><a href="../classes/com.manoelcampos.RetornoBoleto.RetornoInterface.html">RetornoInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/com.manoelcampos.RetornoBoleto.LeituraArquivo.html">LeituraArquivo</a></li>
+                                                    <li class="class"><a href="../classes/com.manoelcampos.RetornoBoleto.LinhaArquivo.html">LinhaArquivo</a></li>
+                                                    <li class="class"><a href="../classes/com.manoelcampos.RetornoBoleto.RetornoAbstract.html">RetornoAbstract</a></li>
+                                                    <li class="class"><a href="../classes/com.manoelcampos.RetornoBoleto.RetornoCNAB240.html">RetornoCNAB240</a></li>
+                                                    <li class="class"><a href="../classes/com.manoelcampos.RetornoBoleto.RetornoCNAB400.html">RetornoCNAB400</a></li>
+                                                    <li class="class"><a href="../classes/com.manoelcampos.RetornoBoleto.RetornoCNAB400Abstract.html">RetornoCNAB400Abstract</a></li>
+                                                    <li class="class"><a href="../classes/com.manoelcampos.RetornoBoleto.RetornoCNAB400Bradesco.html">RetornoCNAB400Bradesco</a></li>
+                                                    <li class="class"><a href="../classes/com.manoelcampos.RetornoBoleto.RetornoCNAB400Conv7.html">RetornoCNAB400Conv7</a></li>
+                                                    <li class="class"><a href="../classes/com.manoelcampos.RetornoBoleto.RetornoFactory.html">RetornoFactory</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/com.manoelcampos.RetornoBoleto.html">\com\manoelcampos\RetornoBoleto</a>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\com\manoelcampos\RetornoBoleto</small>RetornoInterface</h1>
+                    <p><em>Interface a ser implementada por classes que realizam a leitura de arquivos
+de retorno de cobranças dos bancos brasileiros.</em></p>
+                    
+
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span6">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span6">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span6">
+                                                                    <a href="../classes/com.manoelcampos.RetornoBoleto.RetornoInterface.html#method_setNomeArquivo">setNomeArquivo()</a><br />
+                                                                    <a href="../classes/com.manoelcampos.RetornoBoleto.RetornoInterface.html#method_getNomeArquivo">getNomeArquivo()</a><br />
+                                                                    <a href="../classes/com.manoelcampos.RetornoBoleto.RetornoInterface.html#method_arquivoEstaNoFormato">arquivoEstaNoFormato()</a><br />
+                                                                    <a href="../classes/com.manoelcampos.RetornoBoleto.RetornoInterface.html#method_getIdHeaderArquivo">getIdHeaderArquivo()</a><br />
+                                                                    <a href="../classes/com.manoelcampos.RetornoBoleto.RetornoInterface.html#method_getIdHeaderLote">getIdHeaderLote()</a><br />
+                                                                    <a href="../classes/com.manoelcampos.RetornoBoleto.RetornoInterface.html#method_getIdDetalhe">getIdDetalhe()</a><br />
+                                                                    <a href="../classes/com.manoelcampos.RetornoBoleto.RetornoInterface.html#method_getIdTrailerLote">getIdTrailerLote()</a><br />
+                                                                    <a href="../classes/com.manoelcampos.RetornoBoleto.RetornoInterface.html#method_getIdTrailerArquivo">getIdTrailerArquivo()</a><br />
+                                                                    <a href="../classes/com.manoelcampos.RetornoBoleto.RetornoInterface.html#method_getTotalCaracteresPorLinha">getTotalCaracteresPorLinha()</a><br />
+                                                                    <a href="../classes/com.manoelcampos.RetornoBoleto.RetornoInterface.html#method_lerLinhaArquivoRetorno">lerLinhaArquivoRetorno()</a><br />
+                                                            </section>
+                            <section class="span6">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span6">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span6">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span6">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span6">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        <dl>
+                        <dt>File</dt>
+                            <dd>
+                                <a href="../files/RetornoInterface.html"><div class="path-wrapper">RetornoInterface.php</div></a>
+                            </dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">\Default</div></dd>
+                                                
+                                            </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr>
+                            <th>license</th>
+                            <td>
+                                                                    <p><a href="https://opensource.org/licenses/MIT">MIT License</a></p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>author</th>
+                            <td>
+                                                                    <p><a href="http://manoelcampos.com/contact">Manoel Campos da Silva Filho</a></p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>version</th>
+                            <td>
+                                                                    
+                                                            </td>
+                        </tr>
+                                        </table>
+                </aside>
+            </div>
+
+            
+                        <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Methods</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setNomeArquivo" name="method_setNomeArquivo" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setNomeArquivo()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setNomeArquivo(string  <span class="argument">$nomeArquivo</span>) </pre>
+                <p><em>Setter para o atributo nomeArquivo</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$nomeArquivo </td>
+                                <td><p>Nome do arquivo de retorno a ser lido</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getNomeArquivo" name="method_getNomeArquivo" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getNomeArquivo()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getNomeArquivo() : string</pre>
+                <p><em>Getter para o atributo nomeArquivo.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>Nome do arquivo de retorno a ser lido</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_arquivoEstaNoFormato" name="method_arquivoEstaNoFormato" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">arquivoEstaNoFormato()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">arquivoEstaNoFormato(string  <span class="argument">$linha</span>) : boolean</pre>
+                <p><em>Verifica se um arquivo está no formato que a classe é capaz de manipular.</em></p>
+                <p>Tal verificação é feita apenas pelo número de colunas de uma linha do arquivo.
+Tal método deve ser implementdo pelas sub-classes.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$linha </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>true se o arquivo está no formato, falso caso contrário</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getIdHeaderArquivo" name="method_getIdHeaderArquivo" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getIdHeaderArquivo()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getIdHeaderArquivo() : integer</pre>
+                <p><em>Define o valor que identifica uma coluna do tipo HEADER DE ARQUIVO.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getIdHeaderLote" name="method_getIdHeaderLote" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getIdHeaderLote()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getIdHeaderLote() : integer</pre>
+                <p><em>Define o valor que identifica uma coluna do tipo HEADER DE LOTE.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getIdDetalhe" name="method_getIdDetalhe" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getIdDetalhe()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getIdDetalhe() : integer</pre>
+                <p><em>Define o valor que identifica uma coluna do tipo DETALHE.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getIdTrailerLote" name="method_getIdTrailerLote" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getIdTrailerLote()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getIdTrailerLote() : integer</pre>
+                <p><em>Define o valor que identifica uma coluna do tipo TRAILER DE LOTE.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getIdTrailerArquivo" name="method_getIdTrailerArquivo" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getIdTrailerArquivo()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getIdTrailerArquivo() : integer</pre>
+                <p><em>Define o valor que identifica uma coluna do tipo TRAILER DE ARQUIVO</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getTotalCaracteresPorLinha" name="method_getTotalCaracteresPorLinha" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getTotalCaracteresPorLinha()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getTotalCaracteresPorLinha() : integer</pre>
+                <p><em>Obtém o total de caracteres que cada linha do arquivo de retorno possui.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_lerLinhaArquivoRetorno" name="method_lerLinhaArquivoRetorno" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">lerLinhaArquivoRetorno()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">lerLinhaArquivoRetorno(integer  <span class="argument">$numLn</span>, string  <span class="argument">$linhaIniciandoComEspaco</span>) : \com\manoelcampos\RetornoBoleto\LinhaArquivo</pre>
+                <p><em>Lê uma linha do arquivo de retorno.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$numLn </td>
+                                <td><p>Número da linha a ser processada</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$linhaIniciandoComEspaco </td>
+                                <td><p>String contendo a linha a ser processada</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/com.manoelcampos.RetornoBoleto.LinhaArquivo.html">\com\manoelcampos\RetornoBoleto\LinhaArquivo</a>
+                                            &mdash; <p>um objeto contendo os dados da linha lida ou
+NULL caso a linha não tenha sido identificada.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">RetornoInterface.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/RetornoInterface.php.txt" class="language-php"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/com.html">\com</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on February 27th, 2016 at 18:24.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
