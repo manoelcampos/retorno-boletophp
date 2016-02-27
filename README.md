@@ -10,7 +10,7 @@ A documentação do projeto foi gerada com [PhpDoc](http://phpdoc.org) e está d
 
 Um script para geração/atualização da documentação em HTML está disponível no arquivo [gerardoc.sh](gerardoc.sh).
 
-A implementação do projeto para versões do PHP inferiores a 5.5 estão obsoletas, não sendo recomendado seu uso. Tal versão obsoleta também não é mais suportada. Se de qualquer maneira desejar tal versão, pode baixar os fonte na [branch php53](tree/php53).
+A implementação do projeto para versões do PHP inferiores a 5.5 estão obsoletas, não sendo recomendado seu uso. Tal versão obsoleta também não é mais suportada. Se de qualquer maneira desejar tal versão, pode baixar os fonte na [branch php53](https://github.com/manoelcampos/Retorno-BoletoPHP/tree/php53).
 
 Exemplos
 --------
