@@ -16,7 +16,7 @@
     ],
     "require-dev": {
         "phpdocumentor/phpdocumentor": "2.*"
-    }
+    },
     "require": {
         "php": ">=5.5.0"
     }
