@@ -21,87 +21,87 @@
 <path fill="none" stroke="gray" d="M36,-24C36,-24 990.097,-24 990.097,-24 996.097,-24 1002.1,-30 1002.1,-36 1002.1,-36 1002.1,-353 1002.1,-353 1002.1,-359 996.097,-365 990.097,-365 990.097,-365 36,-365 36,-365 30,-365 24,-359 24,-353 24,-353 24,-36 24,-36 24,-30 30,-24 36,-24"/>
 <text text-anchor="middle" x="513.048" y="-352.2" font-family="Times,serif" font-size="11.00" fill="gray">RetornoBoleto</text>
 </g>
-<!-- \\ManoelCampos\\RetornoBoleto\\LeituraArquivo -->
-<g id="node1" class="node"><title>\\ManoelCampos\\RetornoBoleto\\LeituraArquivo</title>
-<polygon fill="none" stroke="black" points="964.6,-338 855.768,-338 855.768,-302 964.6,-302 964.6,-338"/>
-<text text-anchor="middle" x="910.184" y="-316.7" font-family="Courier,monospace" font-size="11.00">LeituraArquivo</text>
-</g>
-<!-- \\ManoelCampos\\RetornoBoleto\\LinhaArquivo -->
-<g id="node2" class="node"><title>\\ManoelCampos\\RetornoBoleto\\LinhaArquivo</title>
-<polygon fill="none" stroke="black" points="957.897,-284 862.471,-284 862.471,-248 957.897,-248 957.897,-284"/>
-<text text-anchor="middle" x="910.184" y="-262.7" font-family="Courier,monospace" font-size="11.00">LinhaArquivo</text>
-</g>
-<!-- \\ManoelCampos\\RetornoBoleto\\RetornoAbstract -->
-<g id="node3" class="node"><title>\\ManoelCampos\\RetornoBoleto\\RetornoAbstract</title>
-<polygon fill="none" stroke="black" points="340.641,-230 225.609,-230 225.609,-194 340.641,-194 340.641,-230"/>
-<text text-anchor="start" x="250.12" y="-214.2" font-family="Courier,monospace" font-size="11.00">«abstract»</text>
-<text text-anchor="start" x="233.617" y="-203.2" font-family="Courier,monospace" font-size="11.00">RetornoAbstract</text>
-</g>
-<!-- \\ManoelCampos\\RetornoBoleto\\RetornoInterface -->
-<g id="node11" class="node"><title>\\ManoelCampos\\RetornoBoleto\\RetornoInterface</title>
-<polygon fill="none" stroke="black" points="153.426,-230 32.1908,-230 32.1908,-194 153.426,-194 153.426,-230"/>
-<text text-anchor="middle" x="92.8086" y="-208.7" font-family="Courier,monospace" font-size="11.00">RetornoInterface</text>
-</g>
-<!-- \\ManoelCampos\\RetornoBoleto\\RetornoAbstract&#45;&gt;\\ManoelCampos\\RetornoBoleto\\RetornoInterface -->
-<g id="edge1" class="edge"><title>\\ManoelCampos\\RetornoBoleto\\RetornoAbstract&#45;&gt;\\ManoelCampos\\RetornoBoleto\\RetornoInterface</title>
-<path fill="none" stroke="black" stroke-dasharray="1,5" d="M225.369,-212C206.006,-212 184.123,-212 163.842,-212"/>
-<polygon fill="none" stroke="black" points="163.719,-208.5 153.719,-212 163.719,-215.5 163.719,-208.5"/>
-</g>
-<!-- \\ManoelCampos\\RetornoBoleto\\RetornoCNAB240 -->
-<g id="node4" class="node"><title>\\ManoelCampos\\RetornoBoleto\\RetornoCNAB240</title>
-<polygon fill="none" stroke="black" points="547.661,-257 438.829,-257 438.829,-221 547.661,-221 547.661,-257"/>
-<text text-anchor="middle" x="493.245" y="-235.7" font-family="Courier,monospace" font-size="11.00">RetornoCNAB240</text>
-</g>
-<!-- \\ManoelCampos\\RetornoBoleto\\RetornoCNAB240&#45;&gt;\\ManoelCampos\\RetornoBoleto\\RetornoAbstract -->
-<g id="edge2" class="edge"><title>\\ManoelCampos\\RetornoBoleto\\RetornoCNAB240&#45;&gt;\\ManoelCampos\\RetornoBoleto\\RetornoAbstract</title>
-<path fill="none" stroke="black" d="M438.919,-232.082C412.211,-228.617 379.599,-224.386 351.208,-220.703"/>
-<polygon fill="none" stroke="black" points="351.325,-217.189 340.958,-219.373 350.424,-224.131 351.325,-217.189"/>
-</g>
 <!-- \\ManoelCampos\\RetornoBoleto\\RetornoCNAB400 -->
-<g id="node5" class="node"><title>\\ManoelCampos\\RetornoBoleto\\RetornoCNAB400</title>
-<polygon fill="none" stroke="black" points="754.48,-203 645.649,-203 645.649,-167 754.48,-167 754.48,-203"/>
-<text text-anchor="middle" x="700.064" y="-181.7" font-family="Courier,monospace" font-size="11.00">RetornoCNAB400</text>
+<g id="node1" class="node"><title>\\ManoelCampos\\RetornoBoleto\\RetornoCNAB400</title>
+<polygon fill="none" stroke="black" points="754.48,-257 645.649,-257 645.649,-221 754.48,-221 754.48,-257"/>
+<text text-anchor="middle" x="700.064" y="-235.7" font-family="Courier,monospace" font-size="11.00">RetornoCNAB400</text>
 </g>
 <!-- \\ManoelCampos\\RetornoBoleto\\RetornoCNAB400Abstract -->
 <g id="node6" class="node"><title>\\ManoelCampos\\RetornoBoleto\\RetornoCNAB400Abstract</title>
-<polygon fill="none" stroke="black" points="573.969,-203 412.521,-203 412.521,-167 573.969,-167 573.969,-203"/>
-<text text-anchor="start" x="460.24" y="-187.2" font-family="Courier,monospace" font-size="11.00">«abstract»</text>
-<text text-anchor="start" x="420.633" y="-176.2" font-family="Courier,monospace" font-size="11.00">RetornoCNAB400Abstract</text>
+<polygon fill="none" stroke="black" points="573.969,-257 412.521,-257 412.521,-221 573.969,-221 573.969,-257"/>
+<text text-anchor="start" x="460.24" y="-241.2" font-family="Courier,monospace" font-size="11.00">«abstract»</text>
+<text text-anchor="start" x="420.633" y="-230.2" font-family="Courier,monospace" font-size="11.00">RetornoCNAB400Abstract</text>
 </g>
 <!-- \\ManoelCampos\\RetornoBoleto\\RetornoCNAB400&#45;&gt;\\ManoelCampos\\RetornoBoleto\\RetornoCNAB400Abstract -->
-<g id="edge3" class="edge"><title>\\ManoelCampos\\RetornoBoleto\\RetornoCNAB400&#45;&gt;\\ManoelCampos\\RetornoBoleto\\RetornoCNAB400Abstract</title>
-<path fill="none" stroke="black" d="M645.785,-185C626.941,-185 605.188,-185 584.15,-185"/>
-<polygon fill="none" stroke="black" points="583.895,-181.5 573.895,-185 583.895,-188.5 583.895,-181.5"/>
+<g id="edge1" class="edge"><title>\\ManoelCampos\\RetornoBoleto\\RetornoCNAB400&#45;&gt;\\ManoelCampos\\RetornoBoleto\\RetornoCNAB400Abstract</title>
+<path fill="none" stroke="black" d="M645.785,-239C626.941,-239 605.188,-239 584.15,-239"/>
+<polygon fill="none" stroke="black" points="583.895,-235.5 573.895,-239 583.895,-242.5 583.895,-235.5"/>
 </g>
-<!-- \\ManoelCampos\\RetornoBoleto\\RetornoCNAB400Abstract&#45;&gt;\\ManoelCampos\\RetornoBoleto\\RetornoAbstract -->
-<g id="edge4" class="edge"><title>\\ManoelCampos\\RetornoBoleto\\RetornoCNAB400Abstract&#45;&gt;\\ManoelCampos\\RetornoBoleto\\RetornoAbstract</title>
-<path fill="none" stroke="black" d="M412.376,-195.362C392.072,-197.996 370.467,-200.799 350.892,-203.338"/>
-<polygon fill="none" stroke="black" points="350.324,-199.882 340.857,-204.64 351.225,-206.824 350.324,-199.882"/>
+<!-- \\ManoelCampos\\RetornoBoleto\\LeituraArquivo -->
+<g id="node2" class="node"><title>\\ManoelCampos\\RetornoBoleto\\LeituraArquivo</title>
+<polygon fill="none" stroke="black" points="964.6,-338 855.768,-338 855.768,-302 964.6,-302 964.6,-338"/>
+<text text-anchor="middle" x="910.184" y="-316.7" font-family="Courier,monospace" font-size="11.00">LeituraArquivo</text>
+</g>
+<!-- \\ManoelCampos\\RetornoBoleto\\RetornoCNAB240 -->
+<g id="node3" class="node"><title>\\ManoelCampos\\RetornoBoleto\\RetornoCNAB240</title>
+<polygon fill="none" stroke="black" points="547.661,-311 438.829,-311 438.829,-275 547.661,-275 547.661,-311"/>
+<text text-anchor="middle" x="493.245" y="-289.7" font-family="Courier,monospace" font-size="11.00">RetornoCNAB240</text>
+</g>
+<!-- \\ManoelCampos\\RetornoBoleto\\RetornoAbstract -->
+<g id="node8" class="node"><title>\\ManoelCampos\\RetornoBoleto\\RetornoAbstract</title>
+<polygon fill="none" stroke="black" points="340.641,-284 225.609,-284 225.609,-248 340.641,-248 340.641,-284"/>
+<text text-anchor="start" x="250.12" y="-268.2" font-family="Courier,monospace" font-size="11.00">«abstract»</text>
+<text text-anchor="start" x="233.617" y="-257.2" font-family="Courier,monospace" font-size="11.00">RetornoAbstract</text>
+</g>
+<!-- \\ManoelCampos\\RetornoBoleto\\RetornoCNAB240&#45;&gt;\\ManoelCampos\\RetornoBoleto\\RetornoAbstract -->
+<g id="edge2" class="edge"><title>\\ManoelCampos\\RetornoBoleto\\RetornoCNAB240&#45;&gt;\\ManoelCampos\\RetornoBoleto\\RetornoAbstract</title>
+<path fill="none" stroke="black" d="M438.919,-286.082C412.211,-282.617 379.599,-278.386 351.208,-274.703"/>
+<polygon fill="none" stroke="black" points="351.325,-271.189 340.958,-273.373 350.424,-278.131 351.325,-271.189"/>
 </g>
 <!-- \\ManoelCampos\\RetornoBoleto\\RetornoCNAB400Bradesco -->
-<g id="node7" class="node"><title>\\ManoelCampos\\RetornoBoleto\\RetornoCNAB400Bradesco</title>
-<polygon fill="none" stroke="black" points="990.908,-230 829.461,-230 829.461,-194 990.908,-194 990.908,-230"/>
-<text text-anchor="middle" x="910.184" y="-208.7" font-family="Courier,monospace" font-size="11.00">RetornoCNAB400Bradesco</text>
+<g id="node4" class="node"><title>\\ManoelCampos\\RetornoBoleto\\RetornoCNAB400Bradesco</title>
+<polygon fill="none" stroke="black" points="990.908,-284 829.461,-284 829.461,-248 990.908,-248 990.908,-284"/>
+<text text-anchor="middle" x="910.184" y="-262.7" font-family="Courier,monospace" font-size="11.00">RetornoCNAB400Bradesco</text>
 </g>
 <!-- \\ManoelCampos\\RetornoBoleto\\RetornoCNAB400Bradesco&#45;&gt;\\ManoelCampos\\RetornoBoleto\\RetornoCNAB400 -->
-<g id="edge5" class="edge"><title>\\ManoelCampos\\RetornoBoleto\\RetornoCNAB400Bradesco&#45;&gt;\\ManoelCampos\\RetornoBoleto\\RetornoCNAB400</title>
-<path fill="none" stroke="black" d="M829.315,-201.638C807.839,-198.852 784.908,-195.877 764.462,-193.225"/>
-<polygon fill="none" stroke="black" points="764.698,-189.726 754.331,-191.91 763.798,-196.668 764.698,-189.726"/>
+<g id="edge3" class="edge"><title>\\ManoelCampos\\RetornoBoleto\\RetornoCNAB400Bradesco&#45;&gt;\\ManoelCampos\\RetornoBoleto\\RetornoCNAB400</title>
+<path fill="none" stroke="black" d="M829.315,-255.638C807.839,-252.852 784.908,-249.877 764.462,-247.225"/>
+<polygon fill="none" stroke="black" points="764.698,-243.726 754.331,-245.91 763.798,-250.668 764.698,-243.726"/>
 </g>
 <!-- \\ManoelCampos\\RetornoBoleto\\RetornoCNAB400Conv7 -->
-<g id="node8" class="node"><title>\\ManoelCampos\\RetornoBoleto\\RetornoCNAB400Conv7</title>
-<polygon fill="none" stroke="black" points="981.105,-176 839.263,-176 839.263,-140 981.105,-140 981.105,-176"/>
-<text text-anchor="middle" x="910.184" y="-154.7" font-family="Courier,monospace" font-size="11.00">RetornoCNAB400Conv7</text>
+<g id="node5" class="node"><title>\\ManoelCampos\\RetornoBoleto\\RetornoCNAB400Conv7</title>
+<polygon fill="none" stroke="black" points="981.105,-230 839.263,-230 839.263,-194 981.105,-194 981.105,-230"/>
+<text text-anchor="middle" x="910.184" y="-208.7" font-family="Courier,monospace" font-size="11.00">RetornoCNAB400Conv7</text>
 </g>
 <!-- \\ManoelCampos\\RetornoBoleto\\RetornoCNAB400Conv7&#45;&gt;\\ManoelCampos\\RetornoBoleto\\RetornoCNAB400 -->
-<g id="edge6" class="edge"><title>\\ManoelCampos\\RetornoBoleto\\RetornoCNAB400Conv7&#45;&gt;\\ManoelCampos\\RetornoBoleto\\RetornoCNAB400</title>
-<path fill="none" stroke="black" d="M839.304,-167.066C815.023,-170.216 787.948,-173.728 764.239,-176.804"/>
-<polygon fill="none" stroke="black" points="763.769,-173.336 754.303,-178.093 764.67,-180.278 763.769,-173.336"/>
+<g id="edge4" class="edge"><title>\\ManoelCampos\\RetornoBoleto\\RetornoCNAB400Conv7&#45;&gt;\\ManoelCampos\\RetornoBoleto\\RetornoCNAB400</title>
+<path fill="none" stroke="black" d="M839.304,-221.066C815.023,-224.216 787.948,-227.728 764.239,-230.804"/>
+<polygon fill="none" stroke="black" points="763.769,-227.336 754.303,-232.093 764.67,-234.278 763.769,-227.336"/>
+</g>
+<!-- \\ManoelCampos\\RetornoBoleto\\RetornoCNAB400Abstract&#45;&gt;\\ManoelCampos\\RetornoBoleto\\RetornoAbstract -->
+<g id="edge5" class="edge"><title>\\ManoelCampos\\RetornoBoleto\\RetornoCNAB400Abstract&#45;&gt;\\ManoelCampos\\RetornoBoleto\\RetornoAbstract</title>
+<path fill="none" stroke="black" d="M412.376,-249.362C392.072,-251.996 370.467,-254.799 350.892,-257.338"/>
+<polygon fill="none" stroke="black" points="350.324,-253.882 340.857,-258.64 351.225,-260.824 350.324,-253.882"/>
 </g>
 <!-- \\ManoelCampos\\RetornoBoleto\\RetornoFactory -->
-<g id="node9" class="node"><title>\\ManoelCampos\\RetornoBoleto\\RetornoFactory</title>
-<polygon fill="none" stroke="black" points="964.6,-122 855.768,-122 855.768,-86 964.6,-86 964.6,-122"/>
-<text text-anchor="middle" x="910.184" y="-100.7" font-family="Courier,monospace" font-size="11.00">RetornoFactory</text>
+<g id="node7" class="node"><title>\\ManoelCampos\\RetornoBoleto\\RetornoFactory</title>
+<polygon fill="none" stroke="black" points="964.6,-176 855.768,-176 855.768,-140 964.6,-140 964.6,-176"/>
+<text text-anchor="middle" x="910.184" y="-154.7" font-family="Courier,monospace" font-size="11.00">RetornoFactory</text>
+</g>
+<!-- \\ManoelCampos\\RetornoBoleto\\RetornoInterface -->
+<g id="node11" class="node"><title>\\ManoelCampos\\RetornoBoleto\\RetornoInterface</title>
+<polygon fill="none" stroke="black" points="153.426,-284 32.1908,-284 32.1908,-248 153.426,-248 153.426,-284"/>
+<text text-anchor="middle" x="92.8086" y="-262.7" font-family="Courier,monospace" font-size="11.00">RetornoInterface</text>
+</g>
+<!-- \\ManoelCampos\\RetornoBoleto\\RetornoAbstract&#45;&gt;\\ManoelCampos\\RetornoBoleto\\RetornoInterface -->
+<g id="edge6" class="edge"><title>\\ManoelCampos\\RetornoBoleto\\RetornoAbstract&#45;&gt;\\ManoelCampos\\RetornoBoleto\\RetornoInterface</title>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M225.369,-266C206.006,-266 184.123,-266 163.842,-266"/>
+<polygon fill="none" stroke="black" points="163.719,-262.5 153.719,-266 163.719,-269.5 163.719,-262.5"/>
+</g>
+<!-- \\ManoelCampos\\RetornoBoleto\\LinhaArquivo -->
+<g id="node9" class="node"><title>\\ManoelCampos\\RetornoBoleto\\LinhaArquivo</title>
+<polygon fill="none" stroke="black" points="957.897,-122 862.471,-122 862.471,-86 957.897,-86 957.897,-122"/>
+<text text-anchor="middle" x="910.184" y="-100.7" font-family="Courier,monospace" font-size="11.00">LinhaArquivo</text>
 </g>
 <!-- \\ManoelCampos\\RetornoBoleto\\ProcessaLinhaObservable -->
 <g id="node10" class="node"><title>\\ManoelCampos\\RetornoBoleto\\ProcessaLinhaObservable</title>

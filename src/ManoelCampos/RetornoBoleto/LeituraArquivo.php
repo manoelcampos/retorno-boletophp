@@ -78,6 +78,12 @@ class LeituraArquivo {
         return $total_linhas;
     }
         
+    /**
+     * Verifica se existe uma função de callback a ser chamada para notificar
+     * quando uma linha é lida do arquivo.
+     * @param LinhaArquivo $objLinha Objeto com informações da linha lida do arquivo. Tal objeto será
+     * passado para a função de callback (caso tenha sido passada uma ao instanciar um objeto da classe).
+     */
     public function notifyObserver(LinhaArquivo $objLinha) {
         if ($this->callback != NULL && is_callable($this->callback) && $objLinha != NULL) {
             $callback = $this->callback;
