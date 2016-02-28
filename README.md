@@ -8,13 +8,12 @@ A implementação do projeto para versões do PHP inferiores a 5.5 estão obsole
 
 Documentação
 ------------
-A documentação do projeto foi gerada com [PhpDoc](http://phpdoc.org) e está disponível no diretório [doc](doc/index.html). 
-O PhpDoc está incluído como dependência de desenvolvimento do projeto. Assim, para intalá-lo via composer, basta executar
+A documentação do projeto foi gerada com [PhpDoc](http://phpdoc.org), que está incluído como dependência de desenvolvimento do projeto. Assim, para intalá-lo via composer, basta executar
 `composer install`. Com isto, para gerar a documentação, basta executar `vendor/bin/phpdoc`. Toda a configuração para geração da documentação está definida no arquivo [phpdoc.dist.xml](phpdoc.dist.xml).
 
 Exemplos
 --------
-Diversos exemplos são disponibilizados junto com o projeto, podendo ser acessados a partir do arquivo [exemplos/index.html](exemplos/index.html). Para executar os exemplos, é preciso ter o [Composer](http://getcomposer.org) instalado, pois o projeto agora utiliza o tal tal gerenciador de dependência. Com o Composer instalado, em um terminal na pasta raiz do projeto, basta executar `composer install` para instalar as dependências necessárias e gerar o arquivo vendor/autoload.php para permitir fazer o autoload das classes do projeto.
+Diversos exemplos são disponibilizados junto com o projeto, podendo ser acessados a partir da branch [exemplos](/manoelcampos/Retorno-BoletoPHP/tree/exemplos). Para mais informações sobre o uso, acessa tal branch.
 
 Aviso Legal
 -----------
