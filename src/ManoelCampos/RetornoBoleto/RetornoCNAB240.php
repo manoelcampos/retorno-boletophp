@@ -10,7 +10,7 @@ require_once("RetornoAbstract.php");
  * 
  * @license <a href="https://opensource.org/licenses/MIT">MIT License</a>
  * @author <a href="http://manoelcampos.com/contact">Manoel Campos da Silva Filho</a>
- * @version 1.0
+ * @version 1.1
  */
 class RetornoCNAB240 extends RetornoAbstract {
     protected function processarHeaderArquivo($linha) {

@@ -8,7 +8,7 @@ namespace ManoelCampos\RetornoBoleto;
  * 
  * @license <a href="https://opensource.org/licenses/MIT">MIT License</a>
  * @author <a href="http://manoelcampos.com/contact">Manoel Campos da Silva Filho</a>
- * @version 1.0
+ * @version 1.1
  */
 interface RetornoInterface {
 

@@ -14,7 +14,7 @@ require_once("RetornoCNAB400Abstract.php");
  * 
  * @license <a href="https://opensource.org/licenses/MIT">MIT License</a>
  * @author <a href="http://manoelcampos.com/contact">Manoel Campos da Silva Filho</a>
- * @version 1.0
+ * @version 1.1
  */
 class RetornoCNAB400 extends RetornoCNAB400Abstract {    
     protected function processarHeaderArquivo($linha) {
