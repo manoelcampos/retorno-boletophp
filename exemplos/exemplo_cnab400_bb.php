@@ -13,14 +13,13 @@
  * @version 1.0
  */
 
-require_once("../com/manoelcampos/RetornoBoleto/LeituraArquivo.php");
-require_once("../com/manoelcampos/RetornoBoleto/RetornoCNAB400.php");
-require_once("../com/manoelcampos/RetornoBoleto/LinhaArquivo.php");
+require_once("../vendor/autoload.php");
 
-use com\manoelcampos\RetornoBoleto\LeituraArquivo;
-use com\manoelcampos\RetornoBoleto\RetornoInterface;
-use com\manoelcampos\RetornoBoleto\RetornoCNAB400;
-use com\manoelcampos\RetornoBoleto\LinhaArquivo;
+use ManoelCampos\RetornoBoleto\LeituraArquivo;
+use ManoelCampos\RetornoBoleto\RetornoCNAB400;
+use ManoelCampos\RetornoBoleto\RetornoInterface;
+use ManoelCampos\RetornoBoleto\LinhaArquivo;
+
 
 /**
  * Função de callback que será chamada cada vez que uma linha for lida do

@@ -1,0 +1,519 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Documentação do Módulo para Processamento de Arquivos de Retorno de Títulos Bancários Brasileiros » \ManoelCampos\RetornoBoleto\RetornoCNAB400Conv7</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Documentação do Módulo para Processamento de Arquivos de Retorno de Títulos Bancários Brasileiros</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/ManoelCampos.html"><i class="icon-th"></i> ManoelCampos</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">86</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+</div>
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
+<li class="nav-header">
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public inherited"><a href="#method___construct" title="__construct() :: Construtor padrão."><span class="description">Construtor padrão.</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#method_arquivoEstaNoFormato" title="arquivoEstaNoFormato() :: Verifica se um arquivo está no formato que a classe é capaz de manipular."><span class="description">Verifica se um arquivo está no formato que a classe é capaz de manipular.</span><pre>arquivoEstaNoFormato()</pre></a></li>
+<li class="method public "><a href="#method_getIdDetalhe" title="getIdDetalhe() :: "><span class="description">getIdDetalhe()
+        </span><pre>getIdDetalhe()</pre></a></li>
+<li class="method public inherited"><a href="#method_getIdDetalhe" title="getIdDetalhe() :: "><span class="description">getIdDetalhe()
+        </span><pre>getIdDetalhe()</pre></a></li>
+<li class="method public inherited"><a href="#method_getIdHeaderArquivo" title="getIdHeaderArquivo() :: "><span class="description">getIdHeaderArquivo()
+        </span><pre>getIdHeaderArquivo()</pre></a></li>
+<li class="method public inherited"><a href="#method_getIdHeaderLote" title="getIdHeaderLote() :: O padrão de arquivo não tem lotes"><span class="description">O padrão de arquivo não tem lotes</span><pre>getIdHeaderLote()</pre></a></li>
+<li class="method public inherited"><a href="#method_getIdTrailerArquivo" title="getIdTrailerArquivo() :: "><span class="description">getIdTrailerArquivo()
+        </span><pre>getIdTrailerArquivo()</pre></a></li>
+<li class="method public inherited"><a href="#method_getIdTrailerLote" title="getIdTrailerLote() :: O padrão de arquivo não tem lotes"><span class="description">O padrão de arquivo não tem lotes</span><pre>getIdTrailerLote()</pre></a></li>
+<li class="method public inherited"><a href="#method_getNomeArquivo" title="getNomeArquivo() :: Getter para o atributo nomeArquivo."><span class="description">Getter para o atributo nomeArquivo.</span><pre>getNomeArquivo()</pre></a></li>
+<li class="method public inherited"><a href="#method_getTotalCaracteresPorLinha" title="getTotalCaracteresPorLinha() :: "><span class="description">getTotalCaracteresPorLinha()
+        </span><pre>getTotalCaracteresPorLinha()</pre></a></li>
+<li class="method public inherited"><a href="#method_lerLinhaArquivoRetorno" title="lerLinhaArquivoRetorno() :: Lê uma linha do arquivo de retorno."><span class="description">Lê uma linha do arquivo de retorno.</span><pre>lerLinhaArquivoRetorno()</pre></a></li>
+<li class="method public inherited"><a href="#method_setNomeArquivo" title="setNomeArquivo() :: Setter para o atributo nomeArquivo"><span class="description">Setter para o atributo nomeArquivo</span><pre>setNomeArquivo()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected inherited"><a href="#method_formataData" title="formataData() :: Formata uma string, contendo uma data sem o separador, no formato DDMMAA,
+para o formato DD/MM/AAAA."><span class="description">Formata uma string, contendo uma data sem o separador, no formato DDMMAA,
+para o formato DD/MM/AAAA.</span><pre>formataData()</pre></a></li>
+<li class="method protected inherited"><a href="#method_formataNumero" title="formataNumero() :: Formata uma string, contendo um valor real (float) sem o separador de decimais,
+para a sua correta representação real."><span class="description">Formata uma string, contendo um valor real (float) sem o separador de decimais,
+para a sua correta representação real.</span><pre>formataNumero()</pre></a></li>
+<li class="method protected inherited"><a href="#method_getTipoLinha" title="getTipoLinha() :: Obtém o tipo da linha passada por parâmetro,
+se é uma linha de header, detalhe, trailer, etc."><span class="description">Obtém o tipo da linha passada por parâmetro,
+se é uma linha de header, detalhe, trailer, etc.</span><pre>getTipoLinha()</pre></a></li>
+<li class="method protected "><a href="#method_processarDetalhe" title="processarDetalhe() :: Processa uma linha detalhe do arquivo."><span class="description">Processa uma linha detalhe do arquivo.</span><pre>processarDetalhe()</pre></a></li>
+<li class="method protected inherited"><a href="#method_processarDetalhe" title="processarDetalhe() :: Processa uma linha detalhe do arquivo."><span class="description">Processa uma linha detalhe do arquivo.</span><pre>processarDetalhe()</pre></a></li>
+<li class="method protected "><a href="#method_processarHeaderArquivo" title="processarHeaderArquivo() :: Processa a linha header do arquivo."><span class="description">Processa a linha header do arquivo.</span><pre>processarHeaderArquivo()</pre></a></li>
+<li class="method protected inherited"><a href="#method_processarHeaderArquivo" title="processarHeaderArquivo() :: Processa a linha header do arquivo."><span class="description">Processa a linha header do arquivo.</span><pre>processarHeaderArquivo()</pre></a></li>
+<li class="method protected inherited"><a href="#method_processarHeaderLote" title="processarHeaderLote() :: Processa um header de lote."><span class="description">Processa um header de lote.</span><pre>processarHeaderLote()</pre></a></li>
+<li class="method protected inherited"><a href="#method_processarTrailerArquivo" title="processarTrailerArquivo() :: Processa a linha trailer do arquivo."><span class="description">Processa a linha trailer do arquivo.</span><pre>processarTrailerArquivo()</pre></a></li>
+<li class="method protected inherited"><a href="#method_processarTrailerLote" title="processarTrailerLote() :: Processa um trailer de lote."><span class="description">Processa um trailer de lote.</span><pre>processarTrailerLote()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul><li class="method private inherited"><a href="#method_validarLinha" title="validarLinha() :: "><span class="description">validarLinha()
+        </span><pre>validarLinha()</pre></a></li></ul>
+</li>
+<li class="nav-header">
+<i title="Properties" class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul><li class="property private "><a href="#property_nomeArquivo" title="$nomeArquivo() :: "><span class="description"></span><pre>$nomeArquivo</pre></a></li></ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a xmlns:php="http://php.net/xsl" id="\ManoelCampos\RetornoBoleto\RetornoCNAB400Conv7"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<li>
+<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/ManoelCampos.html">ManoelCampos</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/ManoelCampos.RetornoBoleto.html">RetornoBoleto</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/ManoelCampos.RetornoBoleto.RetornoCNAB400Conv7.html">RetornoCNAB400Conv7</a>
+</li>
+</ul>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description">Classe para leitura de arquivos de retorno de cobranças no padrão CNAB400/CBR643 com convênio de 7 posições.</p>
+<div class="details">
+<div class="long_description"><p>Layout Padrão CNAB/Febraban 400 posições.<p/></p>
+<p>Baseado na documentação para &quot;Layout de Arquivo Retorno para convênios na
+faixa numérica entre 1.000.000 a 9.999.999 (Convênios de 7 posições). Versão Set/09&quot;
+do Banco do Brasil, disponível <a href="http://www.bb.com.br/docs/pub/emp/empl/dwn/Doc2628CBR643Pos7.pdf">aqui</a>.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>license</th>
+<td><a href=""><a href="https://opensource.org/licenses/MIT">MIT License</a></a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href=""><a href="http://manoelcampos.com/contact">Manoel Campos da Silva Filho</a></a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Default.html">Default</a></td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\ManoelCampos\RetornoBoleto\RetornoCNAB400</td>
+</tr>
+</table>
+<h3>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct inherited" data-toggle="collapse" data-target=".method___construct .collapse" title="public">
+<h2>Construtor padrão.</h2>
+<pre>__construct(string $nomeArquivo<code> = NULL</code>) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$nomeArquivo</h4>
+<code>string</code><p>Nome do arquivo de retorno do banco.</p></div>
+</div></div>
+</div>
+<a id="method_arquivoEstaNoFormato"></a><div class="element clickable method public method_arquivoEstaNoFormato inherited" data-toggle="collapse" data-target=".method_arquivoEstaNoFormato .collapse" title="public">
+<h2>Verifica se um arquivo está no formato que a classe é capaz de manipular.</h2>
+<pre>arquivoEstaNoFormato(string $linha) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Tal verificação é feita apenas pelo número de colunas de uma linha do arquivo.
+Tal método deve ser implementdo pelas sub-classes.</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\ManoelCampos\RetornoBoleto\RetornoInterface::arquivoEstaNoFormato()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$linha</h4></div>
+</div></div>
+</div>
+<a id="method_getIdDetalhe"></a><div class="element clickable method public method_getIdDetalhe " data-toggle="collapse" data-target=".method_getIdDetalhe .collapse" title="public">
+<h2>getIdDetalhe()
+        </h2>
+<pre>getIdDetalhe() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\ManoelCampos\RetornoBoleto\RetornoCNAB400::getIdDetalhe()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_getIdDetalhe"></a><div class="element clickable method public method_getIdDetalhe inherited" data-toggle="collapse" data-target=".method_getIdDetalhe .collapse" title="public">
+<h2>getIdDetalhe()
+        </h2>
+<pre>getIdDetalhe() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getIdHeaderArquivo"></a><div class="element clickable method public method_getIdHeaderArquivo inherited" data-toggle="collapse" data-target=".method_getIdHeaderArquivo .collapse" title="public">
+<h2>getIdHeaderArquivo()
+        </h2>
+<pre>getIdHeaderArquivo() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getIdHeaderLote"></a><div class="element clickable method public method_getIdHeaderLote inherited" data-toggle="collapse" data-target=".method_getIdHeaderLote .collapse" title="public">
+<h2>O padrão de arquivo não tem lotes</h2>
+<pre>getIdHeaderLote() : integer</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>-1 para indicar que não há lotes</div>
+</div></div>
+</div>
+<a id="method_getIdTrailerArquivo"></a><div class="element clickable method public method_getIdTrailerArquivo inherited" data-toggle="collapse" data-target=".method_getIdTrailerArquivo .collapse" title="public">
+<h2>getIdTrailerArquivo()
+        </h2>
+<pre>getIdTrailerArquivo() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getIdTrailerLote"></a><div class="element clickable method public method_getIdTrailerLote inherited" data-toggle="collapse" data-target=".method_getIdTrailerLote .collapse" title="public">
+<h2>O padrão de arquivo não tem lotes</h2>
+<pre>getIdTrailerLote() : integer</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>-1 para indicar que não há lotes</div>
+</div></div>
+</div>
+<a id="method_getNomeArquivo"></a><div class="element clickable method public method_getNomeArquivo inherited" data-toggle="collapse" data-target=".method_getNomeArquivo .collapse" title="public">
+<h2>Getter para o atributo nomeArquivo.</h2>
+<pre>getNomeArquivo() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\ManoelCampos\RetornoBoleto\RetornoInterface::getNomeArquivo()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_getTotalCaracteresPorLinha"></a><div class="element clickable method public method_getTotalCaracteresPorLinha inherited" data-toggle="collapse" data-target=".method_getTotalCaracteresPorLinha .collapse" title="public">
+<h2>getTotalCaracteresPorLinha()
+        </h2>
+<pre>getTotalCaracteresPorLinha() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_lerLinhaArquivoRetorno"></a><div class="element clickable method public method_lerLinhaArquivoRetorno inherited" data-toggle="collapse" data-target=".method_lerLinhaArquivoRetorno .collapse" title="public">
+<h2>Lê uma linha do arquivo de retorno.</h2>
+<pre>lerLinhaArquivoRetorno(integer $numLn, string $linhaIniciandoComEspaco) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\ManoelCampos\RetornoBoleto\RetornoInterface::lerLinhaArquivoRetorno()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$numLn</h4></div>
+<div class="subelement argument"><h4>$linhaIniciandoComEspaco</h4></div>
+</div></div>
+</div>
+<a id="method_setNomeArquivo"></a><div class="element clickable method public method_setNomeArquivo inherited" data-toggle="collapse" data-target=".method_setNomeArquivo .collapse" title="public">
+<h2>Setter para o atributo nomeArquivo</h2>
+<pre>setNomeArquivo(string $nomeArquivo) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\ManoelCampos\RetornoBoleto\RetornoInterface::setNomeArquivo()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$nomeArquivo</h4></div>
+</div></div>
+</div>
+<a id="method_formataData"></a><div class="element clickable method protected method_formataData inherited" data-toggle="collapse" data-target=".method_formataData .collapse" title="protected">
+<h2>Formata uma string, contendo uma data sem o separador, no formato DDMMAA,
+para o formato DD/MM/AAAA.</h2>
+<pre>formataData(string $data) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>string</code><p>String contendo a data no formato DDMMAA.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Retorna a data non formato DD/MM/AAAA.</div>
+</div></div>
+</div>
+<a id="method_formataNumero"></a><div class="element clickable method protected method_formataNumero inherited" data-toggle="collapse" data-target=".method_formataNumero .collapse" title="protected">
+<h2>Formata uma string, contendo um valor real (float) sem o separador de decimais,
+para a sua correta representação real.</h2>
+<pre>formataNumero(string $valor, integer $numCasasDecimais<code> = 2</code>) : float</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$valor</h4>
+<code>string</code><p>String contendo o valor na representação
+usada nos arquivos de retorno do banco, sem o separador de decimais.</p></div>
+<div class="subelement argument">
+<h4>$numCasasDecimais</h4>
+<code>integer</code><p>Total de casas decimais do número
+representado em $valor.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>float</code>Retorna o número representado em $valor, no seu formato float,
+contendo o separador de decimais.</div>
+</div></div>
+</div>
+<a id="method_getTipoLinha"></a><div class="element clickable method protected method_getTipoLinha inherited" data-toggle="collapse" data-target=".method_getTipoLinha .collapse" title="protected">
+<h2>Obtém o tipo da linha passada por parâmetro,
+se é uma linha de header, detalhe, trailer, etc.</h2>
+<pre>getTipoLinha(string $linhaIniciandoComEspaco) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="%5CManoelCampos%5CRetornoBoleto%5CgetIdHeaderArquivo()"></a></td>
+</tr>
+<tr>
+<th>see</th>
+<td><a href="%5CManoelCampos%5CRetornoBoleto%5CgetIdHeaderLote()"></a></td>
+</tr>
+<tr>
+<th>see</th>
+<td><a href="%5CManoelCampos%5CRetornoBoleto%5CgetIdDetalhe()"></a></td>
+</tr>
+<tr>
+<th>see</th>
+<td><a href="%5CManoelCampos%5CRetornoBoleto%5CgetIdTrailerLote()"></a></td>
+</tr>
+<tr>
+<th>see</th>
+<td><a href="%5CManoelCampos%5CRetornoBoleto%5CgetIdTrailerArquivo()"></a></td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$linhaIniciandoComEspaco</h4>
+<code>string</code><p>Linha que deseja verificar qual o tipo.</p></div>
+</div></div>
+</div>
+<a id="method_processarDetalhe"></a><div class="element clickable method protected method_processarDetalhe " data-toggle="collapse" data-target=".method_processarDetalhe .collapse" title="protected">
+<h2>Processa uma linha detalhe do arquivo.</h2>
+<pre>processarDetalhe($linha) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\ManoelCampos\RetornoBoleto\RetornoCNAB400::processarDetalhe()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$linha</h4></div>
+</div></div>
+</div>
+<a id="method_processarDetalhe"></a><div class="element clickable method protected method_processarDetalhe inherited" data-toggle="collapse" data-target=".method_processarDetalhe .collapse" title="protected">
+<h2>Processa uma linha detalhe do arquivo.</h2>
+<pre>processarDetalhe(string $linhaIniciandoComEspaco) : \ManoelCampos\RetornoBoleto\array&lt;mixed&gt;</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$linhaIniciandoComEspaco</h4>
+<code>string</code><p>Linha detalhe do arquivo processado</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\ManoelCampos\RetornoBoleto\array&lt;mixed&gt;</code>Retorna um vetor associativo contendo os valores da linha detalhe lida,
+onde os índices do vetor são os nomes das colunas e o conteúdo de cada posição
+é o valor da respectiva coluna da linha detalhe.</div>
+</div></div>
+</div>
+<a id="method_processarHeaderArquivo"></a><div class="element clickable method protected method_processarHeaderArquivo " data-toggle="collapse" data-target=".method_processarHeaderArquivo .collapse" title="protected">
+<h2>Processa a linha header do arquivo.</h2>
+<pre>processarHeaderArquivo($linha) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\ManoelCampos\RetornoBoleto\RetornoCNAB400::processarHeaderArquivo()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$linha</h4></div>
+</div></div>
+</div>
+<a id="method_processarHeaderArquivo"></a><div class="element clickable method protected method_processarHeaderArquivo inherited" data-toggle="collapse" data-target=".method_processarHeaderArquivo .collapse" title="protected">
+<h2>Processa a linha header do arquivo.</h2>
+<pre>processarHeaderArquivo(string $linhaIniciandoComEspaco) : \ManoelCampos\RetornoBoleto\array&lt;mixed&gt;</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$linhaIniciandoComEspaco</h4>
+<code>string</code><p>Linha do header do arquivo processado</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\ManoelCampos\RetornoBoleto\array&lt;mixed&gt;</code>Retorna um vetor associativo contendo os valores do header do arquivo,
+onde os índices do vetor são os nomes das colunas e o conteúdo de cada posição
+é o valor da respectiva coluna do header do arquivo.</div>
+</div></div>
+</div>
+<a id="method_processarHeaderLote"></a><div class="element clickable method protected method_processarHeaderLote inherited" data-toggle="collapse" data-target=".method_processarHeaderLote .collapse" title="protected">
+<h2>Processa um header de lote.</h2>
+<pre>processarHeaderLote(string $linhaIniciandoComEspaco) : \ManoelCampos\RetornoBoleto\array&lt;mixed&gt;</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$linhaIniciandoComEspaco</h4>
+<code>string</code><p>Linha do header de lote processado</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\ManoelCampos\RetornoBoleto\array&lt;mixed&gt;</code>Retorna um vetor associativo contendo os valores do header de lote,
+onde os índices do vetor são os nomes das colunas e o conteúdo de cada posição
+é o valor da respectiva coluna do header de lote.</div>
+</div></div>
+</div>
+<a id="method_processarTrailerArquivo"></a><div class="element clickable method protected method_processarTrailerArquivo inherited" data-toggle="collapse" data-target=".method_processarTrailerArquivo .collapse" title="protected">
+<h2>Processa a linha trailer do arquivo.</h2>
+<pre>processarTrailerArquivo(string $linhaIniciandoComEspaco) : \ManoelCampos\RetornoBoleto\array&lt;mixed&gt;</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$linhaIniciandoComEspaco</h4>
+<code>string</code><p>Linha trailer do arquivo processado</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\ManoelCampos\RetornoBoleto\array&lt;mixed&gt;</code>Retorna um vetor associativo contendo os valores do trailer do arquivo,
+onde os índices do vetor são os nomes das colunas e o conteúdo de cada posição
+é o valor da respectiva coluna do trailer do arquivo.</div>
+</div></div>
+</div>
+<a id="method_processarTrailerLote"></a><div class="element clickable method protected method_processarTrailerLote inherited" data-toggle="collapse" data-target=".method_processarTrailerLote .collapse" title="protected">
+<h2>Processa um trailer de lote.</h2>
+<pre>processarTrailerLote(string $linhaIniciandoComEspaco) : \ManoelCampos\RetornoBoleto\array&lt;mixed&gt;</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$linhaIniciandoComEspaco</h4>
+<code>string</code><p>Linha do trailer de lote processado</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\ManoelCampos\RetornoBoleto\array&lt;mixed&gt;</code>Retorna um vetor associativo contendo os valores do trailer de lote,
+onde os índices do vetor são os nomes das colunas e o conteúdo de cada posição
+é o valor da respectiva coluna do trailer de lote.</div>
+</div></div>
+</div>
+<a id="method_validarLinha"></a><div class="element clickable method private method_validarLinha inherited" data-toggle="collapse" data-target=".method_validarLinha .collapse" title="private">
+<h2>validarLinha()
+        </h2>
+<pre>validarLinha($numLn, $linha) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$numLn</h4></div>
+<div class="subelement argument"><h4>$linha</h4></div>
+</div></div>
+</div>
+<h3>
+<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_nomeArquivo"> </a><div class="element clickable property private property_nomeArquivo" data-toggle="collapse" data-target=".property_nomeArquivo .collapse" title="private">
+<h2>$nomeArquivo</h2>
+<pre>$nomeArquivo </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>""</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>property</th>
+<td>Nome do arquivo de texto a ser lido</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
+            generated on 2016-02-28T22:22:27Z.<br></footer></div>
+</div>
+</body>
+</html>

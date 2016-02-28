@@ -4,17 +4,17 @@ Biblioteca de classes em PHP 5.5+ para leitura de arquivos de retorno de título
 
 O projeto utiliza Design Patterns para permitir a fácil extensão, para adição de novos padrões de arquivos de retorno.
 
+A implementação do projeto para versões do PHP inferiores a 5.5 estão obsoletas, não sendo recomendado seu uso. Tal versão obsoleta também não é mais suportada. Se de qualquer maneira desejar tal versão, pode baixar os fonte na [branch php53](https://github.com/manoelcampos/Retorno-BoletoPHP/tree/php53).
+
 Documentação
 ------------
 A documentação do projeto foi gerada com [PhpDoc](http://phpdoc.org) e está disponível no diretório [doc](doc/index.html). 
-
-Um script para geração/atualização da documentação em HTML está disponível no arquivo [gerardoc.sh](gerardoc.sh).
-
-A implementação do projeto para versões do PHP inferiores a 5.5 estão obsoletas, não sendo recomendado seu uso. Tal versão obsoleta também não é mais suportada. Se de qualquer maneira desejar tal versão, pode baixar os fonte na [branch php53](https://github.com/manoelcampos/Retorno-BoletoPHP/tree/php53).
+O PhpDoc está incluído como dependência de desenvolvimento do projeto. Assim, para intalá-lo via composer, basta executar
+`composer install`. Com isto, para gerar a documentação, basta executar `vendor/bin/phpdoc`. Toda a configuração para geração da documentação está definida no arquivo [phpdoc.dist.xml](phpdoc.dist.xml).
 
 Exemplos
 --------
-Diversos exemplos são disponibilizados junto com o projeto, podendo ser acessados a partir do arquivo [exemplos/index.html](exemplos/index.html).
+Diversos exemplos são disponibilizados junto com o projeto, podendo ser acessados a partir do arquivo [exemplos/index.html](exemplos/index.html). Para executar os exemplos, é preciso ter o [Composer](http://getcomposer.org) instalado, pois o projeto agora utiliza o tal tal gerenciador de dependência. Com o Composer instalado, em um terminal na pasta raiz do projeto, basta executar `composer install` para instalar as dependências necessárias e gerar o arquivo vendor/autoload.php para permitir fazer o autoload das classes do projeto.
 
 Aviso Legal
 -----------

@@ -1,0 +1,185 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Documentação do Módulo para Processamento de Arquivos de Retorno de Títulos Bancários Brasileiros » Default</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Documentação do Módulo para Processamento de Arquivos de Retorno de Títulos Bancários Brasileiros</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/ManoelCampos.html"><i class="icon-th"></i> ManoelCampos</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">86</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-map-marker"></i> Packages</li>
+<li>
+<a href="../packages/Default.html" title="Default"><i class="icon-folder-open"></i>Default</a><ul class="nav nav-list nav-packages"></ul>
+</li>
+<li class="nav-header">
+<i title="Interfaces" class="icon-custom icon-interface"></i> Interfaces</li>
+<li><a href="#ProcessaLinhaObservable" title="Interface para implementar um objeto observável do padrão Observer.">ProcessaLinhaObservable</a></li>
+<li><a href="#RetornoInterface" title="Interface a ser implementada por classes que realizam a leitura de arquivos
+de retorno de cobranças dos bancos brasileiros.">RetornoInterface</a></li>
+<li class="nav-header">
+<i title="Classes" class="icon-custom icon-class"></i> Classes</li>
+<li><a href="#LeituraArquivo" title="Classe que implementa o design pattern Strategy,
+para leitura de arquivos de retorno de cobranças dos bancos brasileiros,
+vincular uma classe para processamento de uma carteira específica
+de arquivo de retorno, e criando uma interface única
+para a execução do processamento do arquivo.">LeituraArquivo</a></li>
+<li><a href="#LinhaArquivo" title="Dados de uma linha lida de um arquivo de retorno de boleto bancário.">LinhaArquivo</a></li>
+<li><a href="#RetornoAbstract" title="Classe base para leitura de arquivos de retorno de cobranças dos bancos brasileiros.">RetornoAbstract</a></li>
+<li><a href="#RetornoCNAB240" title="Classe para leitura_arquivos_retorno_cobranças_padrão CNAB240.">RetornoCNAB240</a></li>
+<li><a href="#RetornoCNAB400" title="Classe para leitura_arquivos_retorno_cobranças_padrão CNAB400.">RetornoCNAB400</a></li>
+<li><a href="#RetornoCNAB400Abstract" title="Classe abstrata para leitura de arquivos de retorno de cobranças no padrão CNAB400/CBR643.">RetornoCNAB400Abstract</a></li>
+<li><a href="#RetornoCNAB400Bradesco" title="Classe para leitura de arquivos de retorno de cobranças no padrão 400 posições do Bradesco.&lt;br/&gt;.">RetornoCNAB400Bradesco</a></li>
+<li><a href="#RetornoCNAB400Conv7" title="Classe para leitura de arquivos de retorno de cobranças no padrão CNAB400/CBR643 com convênio de 7 posições.">RetornoCNAB400Conv7</a></li>
+<li><a href="#RetornoFactory" title="Classe que identifica o tipo de arquivo de retorno sendo carregado e
+automaticamente instancia a classe específica para leitura do mesmo.">RetornoFactory</a></li>
+</ul>
+</div>
+<div class="span8 package-contents">
+<ul class="breadcrumb"><li>
+<a href="../index.html"><i class="icon-folder-open"></i></a><span class="divider">\</span><li class="active"><a href="../packages/Default.html">Default</a></li>
+</li></ul>
+<div class="package-indent">
+<h3>
+<i title="Classes" class="icon-custom icon-class"></i> Classes, interfaces, and traits</h3>
+<div xmlns:php="http://php.net/xsl" id="ProcessaLinhaObservable" class="element ajax clickable interface">
+<h1>ProcessaLinhaObservable<a href="../classes/ManoelCampos.RetornoBoleto.ProcessaLinhaObservable.html">¶</a>
+</h1>
+<p class="short_description">Interface para implementar um objeto observável do padrão Observer.</p>
+<div class="details collapse"></div>
+<a href="../classes/ManoelCampos.RetornoBoleto.ProcessaLinhaObservable.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="RetornoInterface" class="element ajax clickable interface">
+<h1>RetornoInterface<a href="../classes/ManoelCampos.RetornoBoleto.RetornoInterface.html">¶</a>
+</h1>
+<p class="short_description">Interface a ser implementada por classes que realizam a leitura de arquivos
+de retorno de cobranças dos bancos brasileiros.</p>
+<div class="details collapse"></div>
+<a href="../classes/ManoelCampos.RetornoBoleto.RetornoInterface.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="LeituraArquivo" class="element ajax clickable class">
+<h1>LeituraArquivo<a href="../classes/ManoelCampos.RetornoBoleto.LeituraArquivo.html">¶</a>
+</h1>
+<p class="short_description">Classe que implementa o design pattern Strategy,
+para leitura de arquivos de retorno de cobranças dos bancos brasileiros,
+vincular uma classe para processamento de uma carteira específica
+de arquivo de retorno, e criando uma interface única
+para a execução do processamento do arquivo.</p>
+<div class="details collapse"></div>
+<a href="../classes/ManoelCampos.RetornoBoleto.LeituraArquivo.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="LinhaArquivo" class="element ajax clickable class">
+<h1>LinhaArquivo<a href="../classes/ManoelCampos.RetornoBoleto.LinhaArquivo.html">¶</a>
+</h1>
+<p class="short_description">Dados de uma linha lida de um arquivo de retorno de boleto bancário.</p>
+<div class="details collapse"></div>
+<a href="../classes/ManoelCampos.RetornoBoleto.LinhaArquivo.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="RetornoAbstract" class="element ajax clickable class">
+<h1>RetornoAbstract<a href="../classes/ManoelCampos.RetornoBoleto.RetornoAbstract.html">¶</a>
+</h1>
+<p class="short_description">Classe base para leitura de arquivos de retorno de cobranças dos bancos brasileiros.</p>
+<div class="details collapse"></div>
+<a href="../classes/ManoelCampos.RetornoBoleto.RetornoAbstract.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="RetornoCNAB240" class="element ajax clickable class">
+<h1>RetornoCNAB240<a href="../classes/ManoelCampos.RetornoBoleto.RetornoCNAB240.html">¶</a>
+</h1>
+<p class="short_description">Classe para leitura_arquivos_retorno_cobranças_padrão CNAB240.</p>
+<div class="details collapse"></div>
+<a href="../classes/ManoelCampos.RetornoBoleto.RetornoCNAB240.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="RetornoCNAB400" class="element ajax clickable class">
+<h1>RetornoCNAB400<a href="../classes/ManoelCampos.RetornoBoleto.RetornoCNAB400.html">¶</a>
+</h1>
+<p class="short_description">Classe para leitura_arquivos_retorno_cobranças_padrão CNAB400.</p>
+<div class="details collapse"></div>
+<a href="../classes/ManoelCampos.RetornoBoleto.RetornoCNAB400.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="RetornoCNAB400Abstract" class="element ajax clickable class">
+<h1>RetornoCNAB400Abstract<a href="../classes/ManoelCampos.RetornoBoleto.RetornoCNAB400Abstract.html">¶</a>
+</h1>
+<p class="short_description">Classe abstrata para leitura de arquivos de retorno de cobranças no padrão CNAB400/CBR643.</p>
+<div class="details collapse"></div>
+<a href="../classes/ManoelCampos.RetornoBoleto.RetornoCNAB400Abstract.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="RetornoCNAB400Bradesco" class="element ajax clickable class">
+<h1>RetornoCNAB400Bradesco<a href="../classes/ManoelCampos.RetornoBoleto.RetornoCNAB400Bradesco.html">¶</a>
+</h1>
+<p class="short_description">Classe para leitura de arquivos de retorno de cobranças no padrão 400 posições do Bradesco.<br/>.</p>
+<div class="details collapse"></div>
+<a href="../classes/ManoelCampos.RetornoBoleto.RetornoCNAB400Bradesco.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="RetornoCNAB400Conv7" class="element ajax clickable class">
+<h1>RetornoCNAB400Conv7<a href="../classes/ManoelCampos.RetornoBoleto.RetornoCNAB400Conv7.html">¶</a>
+</h1>
+<p class="short_description">Classe para leitura de arquivos de retorno de cobranças no padrão CNAB400/CBR643 com convênio de 7 posições.</p>
+<div class="details collapse"></div>
+<a href="../classes/ManoelCampos.RetornoBoleto.RetornoCNAB400Conv7.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="RetornoFactory" class="element ajax clickable class">
+<h1>RetornoFactory<a href="../classes/ManoelCampos.RetornoBoleto.RetornoFactory.html">¶</a>
+</h1>
+<p class="short_description">Classe que identifica o tipo de arquivo de retorno sendo carregado e
+automaticamente instancia a classe específica para leitura do mesmo.</p>
+<div class="details collapse"></div>
+<a href="../classes/ManoelCampos.RetornoBoleto.RetornoFactory.html" class="more">« More »</a>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
+            generated on 2016-02-28T22:22:26Z.<br></footer></div>
+</div>
+</body>
+</html>
