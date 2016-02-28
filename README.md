@@ -13,7 +13,7 @@ A documentação do projeto foi gerada com [PhpDoc](http://phpdoc.org), que est�
 
 Exemplos
 --------
-Diversos exemplos são disponibilizados junto com o projeto, podendo ser acessados a partir da branch [exemplos](/manoelcampos/Retorno-BoletoPHP/tree/exemplos). Para mais informações sobre o uso, acessa tal branch.
+Diversos exemplos são disponibilizados junto com o projeto, podendo ser acessados a partir da branch [exemplos](https://github.com/manoelcampos/Retorno-BoletoPHP/tree/exemplos). Para mais informações sobre o uso, acessa tal branch.
 
 Aviso Legal
 -----------
