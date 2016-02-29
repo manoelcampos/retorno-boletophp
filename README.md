@@ -11,6 +11,8 @@ Documentação
 A documentação do projeto foi gerada com [PhpDoc](http://phpdoc.org), que está incluído como dependência de desenvolvimento do projeto. Assim, para intalá-lo via composer, basta executar
 `composer install`. Com isto, para gerar a documentação, basta executar `vendor/bin/phpdoc`. Toda a configuração para geração da documentação está definida no arquivo [phpdoc.dist.xml](phpdoc.dist.xml).
 
+A documentação das classes do projeto podem ser consultadas online em [http://manoelcampos.github.io/Retorno-BoletoPHP/doc/](http://manoelcampos.github.io/Retorno-BoletoPHP/doc/).
+
 Exemplos
 --------
 Diversos exemplos são disponibilizados junto com o projeto, podendo ser acessados a partir da branch [exemplos](https://github.com/manoelcampos/Retorno-BoletoPHP/tree/exemplos). Para mais informações sobre o uso, acessa tal branch.
