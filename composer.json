@@ -2,6 +2,6 @@
 {
     "require": {
         "php": ">=5.5.0",
-        "manoelcampos/retornoboleto": ">=1.1.0"
+        "manoelcampos/retornoboleto": ">=1.0.0"
     }    
 }
