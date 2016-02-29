@@ -3,8 +3,8 @@
     "name": "manoelcampos/retornoboleto",
     "type": "library",
     "description": "Leitura de arquivos de retorno de títulos de cobrança de bancos brasileiros, para os padrões FEBRABAN/CNAB240 e FEBRABAN/CNAB400.",
-    "keywords": ["boleto bancário", "retorno boleto", "títulos", "bancos brasileiros"],
-    "homepage": "https://github.com/manoelcampos/Retorno-BoletoPHP",
+    "keywords": ["Boleto Bancário", "Retorno Boleto", "Arquivo de Retorno", "Títulos de Cobrança", "Bancos Brasileiros"],
+    "homepage": "http://manoelcampos.github.io/retorno-boletophp/",
     "license": "MIT",
     "authors": [
         {

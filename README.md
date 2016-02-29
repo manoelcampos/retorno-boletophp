@@ -1,6 +1,6 @@
 Retorno-BoletoPHP
 -----------------
-Biblioteca de classes em PHP 5.5+ para leitura de arquivos de retorno de títulos de cobrança de bancos brasileiros.
+Biblioteca em PHP 5.5+ para leitura de arquivos de retorno de títulos de cobrança de bancos brasileiros.
 
 O projeto utiliza Design Patterns para permitir a fácil extensão, para adição de novos padrões de arquivos de retorno.
 
@@ -26,6 +26,14 @@ Todo o processo de geração de boletos bancários e leitura de arquivos de reto
 de tais padrões e alguns bancos podem utilizar certos campos do arquivo de retorno enquanto outros não. Por isso, é extremamente recomendável que o desenvolvedor, ou o cliente para qual está desenvolvendo o software, entre em contato com o banco para realizar o processo de homologação. 
 
 Use o projeto por sua conta e risco.
+
+Palavras-chave
+--------------
+- Boleto Bancário
+- Retorno Boleto
+- Arquivo de Retorno
+- Títulos de Cobrança
+- Bancos Brasileiros
 
 Fórum
 -----
