@@ -4,7 +4,7 @@ Biblioteca em PHP 5.5+ para leitura de arquivos de retorno de títulos de cobran
 
 O projeto utiliza Design Patterns para permitir a fácil extensão, para adição de novos padrões de arquivos de retorno.
 
-A implementação do projeto para versões do PHP inferiores a 5.5 está obsoleta, não sendo recomendado seu uso. Tal versão também não é mais suportada. Se de qualquer maneira desejar utilizá-la, pode baixar os fonte na [branch php53](https://github.com/manoelcampos/Retorno-BoletoPHP/tree/php53).
+A implementação do projeto para versões do PHP inferiores a 5.5 está obsoleta, não sendo recomendado seu uso. Tal versão também não é mais suportada. Se de qualquer maneira desejar utilizá-la, pode baixar os fontes na [branch php53](https://github.com/manoelcampos/Retorno-BoletoPHP/tree/php53).
 
 Documentação
 ------------
