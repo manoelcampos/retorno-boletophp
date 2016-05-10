@@ -1,4 +1,4 @@
-Retorno-BoletoPHP
+Retorno-BoletoPHP [![Packagist](https://img.shields.io/packagist/v/manoelcampos/retornoboleto.svg?maxAge=2592000)]() [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 -----------------
 Biblioteca em PHP 5.5+ para leitura de arquivos de retorno de títulos de cobrança de bancos brasileiros.
 
