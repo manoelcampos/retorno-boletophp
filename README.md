@@ -25,14 +25,6 @@ dos mesmos e alguns bancos podem utilizar certos campos do arquivo de retorno en
 
 Use o projeto por sua conta e risco.
 
-Palavras-chave
---------------
-- Boleto Bancário
-- Retorno Boleto
-- Arquivo de Retorno
-- Títulos de Cobrança
-- Bancos Brasileiros
-
 Fórum
 -----
 Dúvidas, acesse o fórum de discussão no [Google Groups](http://groups.google.com/group/retorno-boletophp).
