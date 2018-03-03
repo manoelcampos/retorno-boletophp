@@ -9,10 +9,10 @@ require_once("RetornoAbstract.php");
  * Layout Padrão <a href="http://www.febraban.org.br">Febraban</a> 240 posições V08.4 de 01/09/2009.<p/>
  *
  * @license <a href="https://opensource.org/licenses/MIT">MIT License</a>
- * @author <a href="http://manoelcampos.com/contact">Manoel Campos da Silva Filho</a>
+ * @author <a href="mailto:mauroagr@gmail.com">Mauro Tschiedel</a>
  * @version 1.1
  */
-class RetornoCNAB240Sicoob extends RetornoAbstract {
+class RetornoCNAB240Sicoob extends RetornoCNAB240 {
     protected function processarHeaderArquivo($linha) {
         $vetor = array();
         $vetor["banco"] = substr($linha, 1, 3); //NUMERICO //Código do Banco na Compensação
@@ -182,33 +182,5 @@ class RetornoCNAB240Sicoob extends RetornoAbstract {
         $vetor["cnab2"] = substr($linha, 36, 205); //alpha - default brancos  //Uso Exclusivo FEBRABAN/CNAB
 
         return $vetor;
-    }
-
-    public function getIdDetalhe() {
-        return 3;
-    }
-
-    public function getIdHeaderArquivo() {
-        return 0;
-    }
-
-    public function getIdHeaderLote() {
-        return 1;
-    }
-
-    public function getIdTrailerArquivo() {
-        return 9;
-    }
-
-    public function getIdTrailerLote() {
-        return 5;
-    }
-
-    protected function getTipoLinha($linha) {
-        return substr($linha, 8, 1);
-    }
-
-    public function getTotalCaracteresPorLinha() {
-        return 240;
     }
 }
