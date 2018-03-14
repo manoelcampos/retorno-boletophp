@@ -112,7 +112,7 @@ class RetornoFactory {
             return new RetornoCNAB240Sicoob($this->fileName);
         }
 
-        throw new \Exception("Tipo de registro detalhe desconhecido: " . $linha_detalhe[0]);
+        return $retorno;
     }
 
     /**
