@@ -25,10 +25,6 @@ dos mesmos e alguns bancos podem utilizar certos campos do arquivo de retorno en
 
 Use o projeto por sua conta e risco.
 
-Fórum
------
-Dúvidas, acesse o fórum de discussão no [Google Groups](http://groups.google.com/group/retorno-boletophp).
-
 Licença
 -------
 Os direitos sobre uso do projeto estão protegidos pela [Licença MIT](LICENSE).
